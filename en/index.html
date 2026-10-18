@@ -83,6 +83,7 @@ a{color:inherit}
 .intro{display:flex; flex-direction:column; gap:12px; padding-bottom:40px; min-width:0; container-type:inline-size}
 .hello{font-weight:600; font-size:14px; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); margin:0}
 .hero h1{font-family:var(--font-display); font-weight:900; font-size:34px; font-size:clamp(24px,7.4cqi,56px); line-height:1.05; margin:0; letter-spacing:-.02em; white-space:nowrap}
+.hero h1.grow{transition:font-size .35s ease}
 .caret{display:inline-block; width:.08em; height:.85em; background:var(--ink); margin-left:.04em; vertical-align:-.05em; animation:blink 1s steps(1) infinite}
 .caret.done{animation:blink3 .8s linear 3 forwards}
 @keyframes blink{50%{opacity:0}}
@@ -305,23 +306,24 @@ footer{border-top:1.5px solid var(--line); padding-top:20px; margin-top:8px; dis
   // Animação do nome: "Prado da Silva" vira "Prava"
   var el = document.getElementById("name"), caret = document.getElementById("caret");
   var FULL = "Julio Cesar Prado da Silva", KEEP = "Julio Cesar Pra", FINAL = "Julio Cesar Prava";
-  // Ajusta o tamanho para o nome completo caber em uma linha, sem pular de linha na animação
-  var h1 = el.parentNode;
+  // Tamanho do nome: o nome completo cabe em uma linha; ao virar "Prava", cresce BUMP pixels
+  var h1 = el.parentNode, BUMP = 5, done = false;
   function fit(){
-    h1.style.fontSize = "";
     var probe = document.createElement("span");
-    probe.style.cssText = "position:absolute;visibility:hidden;white-space:nowrap";
+    probe.style.cssText = "position:absolute;visibility:hidden;white-space:nowrap;font-size:100px";
     probe.textContent = FULL;
     h1.appendChild(probe);
-    var w = probe.getBoundingClientRect().width, avail = h1.clientWidth;
-    if(w > avail){ h1.style.fontSize = Math.floor(parseFloat(getComputedStyle(h1).fontSize) * avail / w * 0.995) + "px"; }
+    var per = probe.getBoundingClientRect().width / 100;
     h1.removeChild(probe);
+    if(!per) return;
+    var fs = Math.max(20, Math.min(56, Math.floor(h1.clientWidth * 0.995 / per)));
+    h1.style.fontSize = (fs + (done ? BUMP : 0)) + "px";
   }
   fit();
   if(document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
   window.addEventListener("resize", fit);
   var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  if(reduce){ el.textContent = FINAL; caret.hidden = true; return; }
+  if(reduce){ el.textContent = FINAL; caret.hidden = true; done = true; fit(); return; }
   var text = FULL;
   function step(fn, ms){ setTimeout(fn, ms); }
   function erase(){
@@ -331,6 +333,7 @@ footer{border-top:1.5px solid var(--line); padding-top:20px; margin-top:8px; dis
   function type(){
     if(text.length < FINAL.length){ text = FINAL.slice(0, text.length + 1); el.textContent = text; step(type, 140); }
     else {
+      done = true; h1.classList.add("grow"); fit();
       caret.addEventListener("animationend", function(){ caret.hidden = true; }, { once: true });
       caret.classList.add("done");
     }
