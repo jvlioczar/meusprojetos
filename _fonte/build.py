@@ -131,6 +131,7 @@ T = {
   "aes": ("Estética", "Aesthetics"), "code": ("Programação", "Coding"), "music": ("Música", "Music"),
   "data": ("Dados", "Data"), "web3": ("Web3", "Web3"), "games": ("Games", "Gaming"),
   "prod": ("Produtividade", "Productivity"), "career": ("Carreira", "Careers"),
+  "esports": ("Esports", "Esports"),
 }
 
 PROJECTS = [
@@ -215,6 +216,8 @@ PROJECTS = [
     ("Tumblr de estética alternativa.", "A Tumblr of alternative aesthetics."), tags=[T["altaes"]]),
   P("out", ("BBIE", "BBIE"), "https://blackbeautyiseverywhere.tumblr.com",
     ("Tumblr que celebra a beleza negra em todo lugar.", "A Tumblr celebrating Black beauty everywhere."), tags=[T["aes"]]),
+  P("out", ("Valorant Spikers", "Valorant Spikers"), "https://www.facebook.com/groups/spikers.org",
+    ("Grupo de comunidade brasileira dedicada ao FPS da Riot Games.", "A Brazilian community group for Riot Games' FPS, Valorant."), tags=[T["esports"]]),
   P("out", ("Biblioteca de Programação", "Coding Library"), "https://code.biblioverse.org",
     ("Linguagens, cursos e ferramentas para aprender a programar.", "Languages, courses and tools for learning to code."), tags=[T["code"]]),
   P("out", ("Biblioteca de Games", "Gaming Library"), "https://games.biblioverse.org",
