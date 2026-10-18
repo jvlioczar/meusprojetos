@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://meusprojetos.biblioverse.org/sitemap.xml

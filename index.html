@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Julio Cesar Prava · Projetos de design, IA e intercâmbio</title>
+<meta name="description" content="Portfólio de Julio Cesar Prava, designer gráfico brasileiro em Brisbane: projetos de design, IA, intercâmbio, pensamento crítico, livros, curadoria e guias.">
+<meta name="author" content="Julio Cesar Prava">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#F3F2F8">
+<link rel="canonical" href="https://meusprojetos.biblioverse.org/">
+<link rel="alternate" hreflang="pt-BR" href="https://meusprojetos.biblioverse.org/">
+<link rel="alternate" hreflang="en-AU" href="https://meusprojetos.biblioverse.org/en/">
+<link rel="alternate" hreflang="en" href="https://meusprojetos.biblioverse.org/en/">
+<link rel="alternate" hreflang="x-default" href="https://meusprojetos.biblioverse.org/">
+<link rel="icon" href="/favicon.png" type="image/png" sizes="64x64">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="profile">
+<meta property="og:site_name" content="Julio Cesar Prava">
+<meta property="og:title" content="Julio Cesar Prava · Projetos de design, IA e intercâmbio">
+<meta property="og:description" content="Portfólio de Julio Cesar Prava, designer gráfico brasileiro em Brisbane: projetos de design, IA, intercâmbio, pensamento crítico, livros, curadoria e guias.">
+<meta property="og:url" content="https://meusprojetos.biblioverse.org/">
+<meta property="og:image" content="https://meusprojetos.biblioverse.org/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Julio Cesar Prava">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:locale:alternate" content="en_AU">
+<meta property="profile:first_name" content="Julio Cesar">
+<meta property="profile:last_name" content="Prava">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Julio Cesar Prava · Projetos de design, IA e intercâmbio">
+<meta name="twitter:description" content="Portfólio de Julio Cesar Prava, designer gráfico brasileiro em Brisbane: projetos de design, IA, intercâmbio, pensamento crítico, livros, curadoria e guias.">
+<meta name="twitter:image" content="https://meusprojetos.biblioverse.org/og-image.png">
+<script>(function(){try{var k='jcp-lang',s=localStorage;s.setItem('jcp-t','1');s.removeItem('jcp-t');if(/bot|crawl|spider|slurp|lighthouse|preview|headless/i.test(navigator.userAgent))return;var p=s.getItem(k);if(!p){var l=((navigator.languages&&navigator.languages[0])||navigator.language||'').toLowerCase();p=l.indexOf('pt')===0?'pt':'en';s.setItem(k,p);}if(p!=='pt')location.replace('/en/'+location.hash);}catch(e){}})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gabarito:wght@800;900&family=Figtree:wght@400;600;700&display=swap">
+<style>
+/* Layout: light page, colored category tiles open each section, followed by a 5-column grid of compact rounded cards. */
+:root{
+  color-scheme:light;
+  --bg:#F3F2F8; --surface:#FFFFFF; --ink:#16141F; --muted:#5E5B6E; --line:#E3E1EC;
+  --c-design:#F2661B; --c-ia:#5B3FD1; --c-inter:#0E855C; --c-pens:#DB2877; --c-cur:#FFC21F;
+  --c-hom:#8B3A62; --c-guia:#1463F3; --c-out:#3E4460; --c-livro:#C62F3A;
+  --font-display:"Gabarito","Trebuchet MS",system-ui,sans-serif;
+  --font-body:"Figtree",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --r-lg:32px; --r-md:20px; --r-sm:999px;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth; -webkit-text-size-adjust:100%}
+img{max-width:100%}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:var(--font-body); font-size:16px; line-height:1.55;
+  padding-left:max(16px, env(safe-area-inset-left, 0px));
+  padding-right:max(16px, env(safe-area-inset-right, 0px));
+  padding-block:0 48px;
+}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--c-ia); outline-offset:3px; border-radius:12px}
+.sr-only{position:absolute!important; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0}
+.skip{position:absolute; left:16px; top:-60px; z-index:20; background:var(--ink); color:var(--surface); padding:10px 16px; border-radius:var(--r-sm); font-weight:700; text-decoration:none}
+.skip:focus{top:12px}
+.wrap{max-width:1240px; margin:0 auto; display:flex; flex-direction:column; gap:20px}
+
+/* Top bar */
+.topbar{display:flex; justify-content:flex-end; padding-top:16px}
+.lang{display:flex; padding:4px; gap:2px; background:var(--surface); border:1.5px solid var(--line); border-radius:var(--r-sm)}
+.lang a{font:700 13px/1 var(--font-body); letter-spacing:.06em; text-decoration:none; padding:8px 12px; border-radius:var(--r-sm); color:var(--muted)}
+.lang a[aria-current="true"]{background:var(--ink); color:var(--surface)}
+.lang a:not([aria-current="true"]):hover{color:var(--ink)}
+
+/* Hero */
+.hero{display:grid; grid-template-columns:1.7fr 1fr; gap:16px}
+.hero-main{
+  background:var(--surface); border:1.5px solid var(--line);
+  border-radius:var(--r-lg); padding:40px clamp(24px,4vw,48px) 0;
+  display:grid; grid-template-columns:minmax(0,1fr) 260px; column-gap:24px;
+  position:relative; overflow:hidden; min-width:0;
+}
+.intro{display:flex; flex-direction:column; gap:12px; padding-bottom:40px; min-width:0; container-type:inline-size}
+.hello{font-weight:600; font-size:14px; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); margin:0}
+.hero h1{font-family:var(--font-display); font-weight:900; font-size:40px; font-size:clamp(30px,10cqi,60px); line-height:1; margin:0; letter-spacing:-.02em}
+.caret{display:inline-block; width:.08em; height:.85em; background:var(--ink); margin-left:.04em; vertical-align:-.05em; animation:blink 1s steps(1) infinite}
+.caret.done{animation:blink3 .8s linear 3 forwards}
+@keyframes blink{50%{opacity:0}}
+@keyframes blink3{0%,49%{opacity:1}50%,100%{opacity:0}}
+.bio{margin:0; max-width:46ch; font-size:17px; color:var(--muted)}
+.socials{display:flex; flex-wrap:wrap; gap:8px; margin-top:8px; padding:0; list-style:none}
+.socials a{display:inline-block; text-decoration:none; font-weight:600; font-size:14px; padding:8px 16px; border-radius:var(--r-sm); border:1.5px solid var(--ink); background:var(--surface)}
+.socials a:hover{background:var(--ink); color:var(--surface)}
+.me{position:relative; align-self:end; height:290px; margin:0}
+.me img{position:absolute; bottom:0; left:50%; transform:translateX(-50%); width:220px; height:auto; display:block}
+.stats{list-style:none; margin:0; padding:0}
+.stat{position:absolute; z-index:1; color:#fff; padding:8px 14px; border-radius:16px; font:600 13px/1.2 var(--font-body); box-shadow:0 6px 16px rgba(22,20,31,.18)}
+.stat b{display:block; font:900 24px/1 var(--font-display); font-variant-numeric:tabular-nums}
+.stat-1{background:var(--c-design); color:var(--ink); top:8px; left:0; transform:rotate(-6deg)}
+.stat-2{background:var(--c-ia); top:96px; right:0; transform:rotate(5deg)}
+.stat-3{background:var(--c-inter); bottom:36px; left:0; transform:rotate(-3deg)}
+
+.hero-tiles{display:grid; grid-template-columns:1fr 1fr; gap:16px; margin:0; padding:0; list-style:none}
+.tile{
+  height:100%; border-radius:var(--r-md); padding:18px; color:#fff;
+  display:flex; flex-direction:column; justify-content:space-between; gap:12px;
+  min-height:120px; text-decoration:none;
+  font-family:var(--font-display); font-weight:800; font-size:20px; line-height:1.05;
+  transition:transform .2s ease;
+}
+.tile:hover{transform:translateY(-3px)}
+.tile small{font-family:var(--font-body); font-weight:600; font-size:13px}
+.tile.dark-text{color:var(--ink)}
+
+/* Filter */
+.filter{
+  position:sticky; top:env(safe-area-inset-top, 0px); z-index:5;
+  background:color-mix(in srgb, var(--bg) 88%, transparent);
+  -webkit-backdrop-filter:blur(10px); backdrop-filter:blur(10px);
+  margin-inline:-8px; padding:6px 8px;
+  display:flex; flex-wrap:wrap; gap:6px;
+}
+body::before{content:""; position:fixed; inset:0 0 auto; height:env(safe-area-inset-top, 0px); z-index:10; background:var(--bg)}
+.filter button{
+  flex:none; font:600 14px var(--font-body); color:var(--ink);
+  background:var(--surface); border:1.5px solid var(--line);
+  padding:8px 14px; border-radius:var(--r-sm); cursor:pointer;
+  display:flex; align-items:center; gap:7px;
+}
+.filter button i{width:9px; height:9px; border-radius:50%; background:var(--dot,var(--ink))}
+.filter button[aria-pressed="true"]{background:var(--ink); color:var(--surface); border-color:var(--ink)}
+@media (max-width:699px){
+  .filter{
+    flex-wrap:nowrap; overflow-x:auto; scrollbar-width:none; overscroll-behavior-x:contain; padding-right:32px;
+    -webkit-mask-image:linear-gradient(to right,#000 calc(100% - 32px),transparent);
+            mask-image:linear-gradient(to right,#000 calc(100% - 32px),transparent);
+  }
+  .filter::-webkit-scrollbar{display:none}
+}
+
+/* Sections */
+#projetos{display:flex; flex-direction:column; gap:36px}
+.section{display:flex; flex-direction:column; gap:20px; scroll-margin-top:var(--filter-h,72px)}
+.sec-head{
+  background:var(--c); color:#fff; border-radius:var(--r-lg);
+  padding:22px clamp(22px,3.5vw,36px); min-height:112px;
+  display:flex; justify-content:space-between; align-items:flex-end; gap:16px; flex-wrap:wrap;
+}
+.sec-head.dark-text{color:var(--ink)}
+.sec-head > div{min-width:0}
+.sec-head h2{font-family:var(--font-display); font-weight:900; margin:0; font-size:clamp(30px,4.6vw,52px); line-height:1; letter-spacing:-.015em; text-wrap:balance}
+.sec-head p{margin:8px 0 0; max-width:52ch; font-size:16px}
+.count{font-weight:700; font-size:14px; background:rgba(255,255,255,.22); padding:8px 14px; border-radius:var(--r-sm); font-variant-numeric:tabular-nums}
+.sec-head.dark-text .count{background:rgba(22,20,31,.1)}
+
+.grid{display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:14px; margin:0; padding:0; list-style:none}
+@media (max-width:1100px){.grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media (max-width:880px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:640px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:420px){.grid{grid-template-columns:1fr}}
+.grid > li{display:flex; min-width:0}
+.card{
+  flex:1; background:var(--surface); border-radius:var(--r-md);
+  padding:18px; display:flex; flex-direction:column; gap:8px;
+  border:1.5px solid var(--line); min-width:0; position:relative;
+  transition:transform .2s ease, border-color .2s ease;
+}
+.card:hover{transform:translateY(-3px); border-color:var(--c)}
+.tags{display:flex; flex-wrap:wrap; gap:6px}
+.tag{font-size:11px; font-weight:700; letter-spacing:.04em; text-transform:uppercase; padding:4px 9px; border-radius:var(--r-sm); background:color-mix(in srgb, var(--c) 14%, var(--surface)); color:var(--ink)}
+.tag.wip{background:transparent; border:1.5px dashed var(--muted); color:var(--muted); padding:3px 8px}
+.card h3{margin:0; font-family:var(--font-display); font-weight:800; font-size:19px; line-height:1.15; overflow-wrap:anywhere}
+.card h3 a{text-decoration:none}
+.card h3 a::after{content:""; position:absolute; inset:0; border-radius:var(--r-md)}
+.card h3 a:focus-visible{outline:none}
+.card:has(a:focus-visible){outline:3px solid var(--c-ia); outline-offset:3px}
+.card h3 .arrow{display:inline-block; transition:transform .2s ease; color:var(--c)}
+.card:hover h3 .arrow{transform:translate(3px,-3px)}
+.card p{margin:0; color:var(--muted); font-size:14.5px; line-height:1.5}
+.card .url{margin-top:auto; padding-top:4px; font-size:12.5px; font-weight:600; color:var(--muted); overflow-wrap:anywhere}
+.card.is-wip{background:transparent; border-style:dashed}
+
+/* Invite + footer */
+.invite{
+  margin-top:28px; background:var(--c-cur); color:var(--ink); border-radius:var(--r-lg);
+  padding:32px clamp(22px,4vw,48px); display:grid; grid-template-columns:minmax(0,1fr) auto; gap:20px 32px; align-items:end;
+}
+.invite h2{margin:0 0 8px; font:900 clamp(30px,4.4vw,48px)/1 var(--font-display); letter-spacing:-.015em}
+.invite p{margin:0; max-width:58ch; font-size:17px}
+.invite-actions{display:flex; flex-wrap:wrap; gap:10px}
+.btn{display:inline-block; text-decoration:none; font-weight:700; font-size:15px; padding:12px 20px; border-radius:var(--r-sm); border:2px solid var(--ink)}
+.btn-dark{background:var(--ink); color:#fff}
+.btn-dark:hover{background:transparent; color:var(--ink)}
+.btn-line{background:transparent}
+.btn-line:hover{background:var(--ink); color:#fff}
+footer{border-top:1.5px solid var(--line); padding-top:20px; margin-top:8px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; color:var(--muted); font-size:14px}
+
+@media (max-width:1060px){
+  .hero{grid-template-columns:1fr}
+  .hero-tiles{grid-template-columns:repeat(4,minmax(0,1fr))}
+}
+@media (max-width:760px){ .invite{grid-template-columns:1fr} }
+@media (max-width:680px){
+  .hero-main{grid-template-columns:1fr; padding-top:28px}
+  .intro{padding-bottom:8px}
+  .me{width:100%; max-width:300px; justify-self:center; height:270px}
+  .hero-tiles{grid-template-columns:1fr 1fr; gap:12px}
+  .tile{min-height:96px; font-size:18px}
+  .sec-head{padding:20px; min-height:0; border-radius:24px}
+  .sec-head p{font-size:15px}
+  .invite{border-radius:24px; padding:24px 20px}
+}
+@media (max-width:420px){
+  .stat{padding:6px 10px; font-size:12px}
+  .stat b{font-size:20px}
+  .me{height:250px}
+  .me img{width:200px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{transition:none!important}
+  .caret{animation:none}
+}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ProfilePage", "url": "https://meusprojetos.biblioverse.org/", "name": "Julio Cesar Prava · Projetos de design, IA e intercâmbio", "description": "Portfólio de Julio Cesar Prava, designer gráfico brasileiro em Brisbane: projetos de design, IA, intercâmbio, pensamento crítico, livros, curadoria e guias.", "inLanguage": "pt-BR", "dateModified": "2026-10-18", "mainEntity": {"@type": "Person", "@id": "https://meusprojetos.biblioverse.org/#julio", "name": "Julio Cesar Prava", "alternateName": "Julio Cesar Prado da Silva", "jobTitle": "Designer gráfico", "image": "https://meusprojetos.biblioverse.org/og-image.png", "url": "https://meusprojetos.biblioverse.org/", "homeLocation": {"@type": "Place", "name": "Brisbane, Queensland, Australia"}, "nationality": {"@type": "Country", "name": "Brazil"}, "knowsLanguage": ["pt-BR", "en"], "knowsAbout": ["Graphic design", "Prepress", "Artificial intelligence", "Critical thinking", "Veganism", "Study abroad in Australia"], "sameAs": ["https://instagram.com/sencientista", "https://instagram.com/gdayjulio", "https://www.tiktok.com/@gdayjulio", "https://www.youtube.com/@gdayjulio", "https://linkedin.com/in/juliocesarprava", "https://behance.net/juliocesarprava", "https://biblioverse.org"]}}</script>
+</head>
+<body>
+<a class="skip" href="#projetos">Pular para os projetos</a>
+<div class="wrap">
+  <div class="topbar">
+    <nav class="lang" aria-label="Idioma">
+      <a href="/" hreflang="pt-BR" lang="pt-BR" data-lang="pt" aria-current="true">PT</a>
+      <a href="/en/" hreflang="en-AU" lang="en-AU" data-lang="en" aria-current="false">EN</a>
+    </nav>
+  </div>
+  <header class="hero">
+    <div class="hero-main">
+      <div class="intro">
+        <p class="hello">G&#x27;day, eu sou</p>
+        <h1><span class="sr-only">Julio Cesar Prava</span><span id="name" aria-hidden="true">Julio Cesar Prado da Silva</span><span class="caret" id="caret" aria-hidden="true"></span></h1>
+        <p class="bio">Designer gráfico, criador de conteúdo, curador e ativista. Brasileiro em Brisbane, com mais de 14 anos de design e um monte de projetos sobre ética, IA, intercâmbio e boas listas.</p>
+        <ul class="socials" aria-label="Redes sociais"><li><a href="https://instagram.com/sencientista" target="_blank" rel="noopener me">Instagram</a></li><li><a href="https://linkedin.com/in/juliocesarprava" target="_blank" rel="noopener me">LinkedIn</a></li><li><a href="https://behance.net/juliocesarprava" target="_blank" rel="noopener me">Behance</a></li></ul>
+      </div>
+      <figure class="me">
+        <img src="/avatar.webp" alt="Ilustração de Julio: cabelo preto, bigode, barba castanha e moletom azul" width="444" height="520" fetchpriority="high" decoding="async">
+        <ul class="stats"><li class="stat stat-1"><b>14+</b>anos de design</li><li class="stat stat-2"><b>30+</b>projetos</li><li class="stat stat-3"><b>17</b>bibliotecas</li></ul>
+      </figure>
+    </div>
+    <ul class="hero-tiles" id="atalhos" aria-label="Atalhos para categorias"><li><a class="tile dark-text" href="#design" data-f="design" style="background:var(--c-design)">Design<small>5 projetos</small></a></li><li><a class="tile" href="#ia" data-f="ia" style="background:var(--c-ia)">Inteligência Artificial<small>2 projetos</small></a></li><li><a class="tile" href="#inter" data-f="inter" style="background:var(--c-inter)">Intercâmbio e Idiomas<small>6 projetos</small></a></li><li><a class="tile" href="#pens" data-f="pens" style="background:var(--c-pens)">Pensamento Crítico<small>7 projetos</small></a></li></ul>
+  </header>
+  <nav class="filter" id="filter" aria-label="Filtrar por categoria"><button type="button" data-f="all" aria-pressed="true">Todos</button><button type="button" data-f="design" aria-pressed="false" aria-controls="design" style="--dot:var(--c-design)"><i aria-hidden="true"></i>Design</button><button type="button" data-f="ia" aria-pressed="false" aria-controls="ia" style="--dot:var(--c-ia)" title="Inteligência Artificial"><i aria-hidden="true"></i>IA</button><button type="button" data-f="inter" aria-pressed="false" aria-controls="inter" style="--dot:var(--c-inter)" title="Intercâmbio e Idiomas"><i aria-hidden="true"></i>Intercâmbio</button><button type="button" data-f="pens" aria-pressed="false" aria-controls="pens" style="--dot:var(--c-pens)"><i aria-hidden="true"></i>Pensamento Crítico</button><button type="button" data-f="livro" aria-pressed="false" aria-controls="livro" style="--dot:var(--c-livro)"><i aria-hidden="true"></i>Livros</button><button type="button" data-f="cur" aria-pressed="false" aria-controls="cur" style="--dot:var(--c-cur)"><i aria-hidden="true"></i>Curadoria</button><button type="button" data-f="guia" aria-pressed="false" aria-controls="guia" style="--dot:var(--c-guia)"><i aria-hidden="true"></i>Guias e Diretórios</button><button type="button" data-f="hom" aria-pressed="false" aria-controls="hom" style="--dot:var(--c-hom)"><i aria-hidden="true"></i>Homenagens</button><button type="button" data-f="out" aria-pressed="false" aria-controls="out" style="--dot:var(--c-out)"><i aria-hidden="true"></i>Outros</button></nav>
+  <main id="projetos"><section class="section" id="design" data-cat="design" style="--c:var(--c-design)" aria-labelledby="h-design"><div class="sec-head dark-text"><div><h2 id="h-design">Design</h2><p>Bibliotecas, blogs e inspiração para quem trabalha com design.</p></div><span class="count">5 projetos</span></div><ul class="grid"><li><article class="card"><h3><a href="https://design.biblioverse.org" target="_blank" rel="noopener">Biblioteca de Design <span class="arrow" aria-hidden="true">↗</span></a></h3><p>Diretório de sites e ferramentas úteis para designers.</p><span class="url">design.biblioverse.org</span></article></li><li><article class="card"><h3><a href="https://brazuca.design.blog" target="_blank" rel="noopener">Brazuca Design <span class="arrow" aria-hidden="true">↗</span></a></h3><p>Blog sobre design gráfico feito por um brasileiro.</p><span class="url">brazuca.design.blog</span></article></li><li><article class="card"><h3><a href="https://posteres.tumblr.com" target="_blank" rel="noopener">Pôsteres <span class="arrow" aria-hidden="true">↗</span></a></h3><p>Inspiração para pôsteres de eventos.</p><span class="url">posteres.tumblr.com</span></article></li><li><article class="card is-wip"><div class="tags"><span class="tag wip">Em construção</span></div><h3><a href="https://photography.biblioverse.org" target="_blank" rel="noopener">Biblioteca de Fotografia <span class="arrow" aria-hidden="true">↗</span></a></h3><p>Recursos, apps e referências para fotografia.</p><span class="url">photography.biblioverse.org</span></article></li><li><article class="card is-wip"><div class="tags"><span class="tag wip">Em construção</span></div><h3><a href="https://print.biblioverse.org" target="_blank" rel="noopener">Biblioteca de Mídia Impressa <span class="arrow" aria-hidden="true">↗</span></a></h3><p>Revistas, jornais, gráficas e o universo do impresso.</p><span class="url">print.biblioverse.org</span></article></li></ul></section><section class="section" id="ia" data-cat="ia" style="--c:var(--c-ia)" aria-labelledby="h-ia"><div class="sec-head"><div><h2 id="h-ia">Inteligência Artificial</h2><p>Ferramentas e a história da inteligência artificial.</p></div><span class="count">2 projetos</span></div><ul class="grid"><li><article class="card"><h3><a href="https://ai.biblioverse.org" target="_blank" rel="noopener">Biblioteca de IAs <span class="arrow" aria-hidden="true">↗</span></a></h3><p>As principais ferramentas de inteligência artificial, organizadas por uso.</p><span class="url">ai.biblioverse.org</span></article></li><li><article class="card"><h3><a href="https://aihistory.biblioverse.org" target="_blank" rel="noopener">Timeline da IA <span class="arrow" aria-hidden="true">↗</span></a></h3><p>Linha do tempo interativa com os marcos da história da IA.</p><span class="url">aihistory.biblioverse.org</span></article></li></ul></section><section class="section" id="inter" data-cat="inter" style="--c:var(--c-inter)" aria-labelledby="h-inter"><div class="sec-head"><div><h2 id="h-inter">Intercâmbio e Idiomas</h2><p>Tudo para quem quer estudar, morar e trabalhar na Austrália.</p></div><span class="count">6 projetos</span></div><ul class="grid"><li><article class="card"><h3><a href="https://brasileirosnaaustralia.biblioverse.org" target="_blank" rel="noopener">Brasileiros na Austrália <span class="arrow" aria-hidden="true">↗</span></a></h3><p>Criadores, agências, apps e guia de chegada para quem vem para a Austrália.</p><span class="url">brasileirosnaaustralia.biblioverse.org</span></article></li><li><article class="card"><h3><a href="https://australiaparatodos.wordpress.com" target="_blank" rel="noopener">Austrália Para Todos <span class="arrow" aria-hidden="true">↗</span></a></h3><p>Conteúdo sobre a Austrália para o público brasileiro.</p><span class="url">australiaparatodos.wordpress.com</span></article></li><li><article class="card"><h3><a href="https://australiavsbrasil.biblioverse.org" target="_blank" rel="noopener">Austrália vs Brasil <span class="arrow" aria-hidden="true">↗</span></a></h3><p>Infográfico interativo comparando os dois países com índices oficiais.</p><span class="url">australiavsbrasil.biblioverse.org</span></article></li><li><article class="card"><h3><a href="https://instagram.com/gdayjulio" target="_blank" rel="noopener">G&#x27;day Julio <span class="arrow" aria-hidden="true">↗</span></a></h3><p>Dicas, reflexões e humor sobre estudar, trabalhar e viver na Austrália.</p><span class="url">instagram.com</span></article></li><li><article class="card"><h3><a href="https://language.biblioverse.org" target="_blank" rel="noopener">Biblioteca de Idiomas <span class="arrow" aria-hidden="true">↗</span></a></h3><p>Apps, canais e métodos para aprender idiomas.</p><span class="url">language.biblioverse.org</span></article></li><li><article class="card"><h3><a href="https://travel.biblioverse.org" target="_blank" rel="noopener">Biblioteca de Viagem <span class="arrow" aria-hidden="true">↗</span></a></h3><p>Ferramentas para planejar viagens e intercâmbio.</p><span class="url">travel.biblioverse.org</span></article></li></ul></section><section class="section" id="pens" data-cat="pens" style="--c:var(--c-pens)" aria-labelledby="h-pens"><div class="sec-head"><div><h2 id="h-pens">Pensamento Crítico</h2><p>Testes, publicações e bibliotecas para pensar melhor e com mais coerência.</p></div><span class="count">7 projetos</span></div><ul class="grid"><li><article class="card"><h3><a href="https://ethicstest.biblioverse.org" target="_blank" rel="noopener">Teste de Visão Moral <span class="arrow" aria-hidden="true">↗</span></a></h3><p>Teste bilíngue que mapeia sua visão ética e moral.</p><span class="url">ethicstest.biblioverse.org</span></article></li><li><article class="card"><h3><a href="https://coherencetest.biblioverse.org" target="_blank" rel="noopener">Teste de Coerência <span class="arrow" aria-hidden="true">↗</span></a></h3><p>Teste sobre coerência lógica e contradições entre crenças e ações.</p><span class="url">coherencetest.biblioverse.org</span></article></li><li><article class="card"><h3><a href="https://medium.com/novo-iluminismo" target="_blank" rel="noopener">Novo Iluminismo <span class="arrow" aria-hidden="true">↗</span></a></h3><p>Publicação no Medium sobre pensamento crítico e racionalidade moral.</p><span class="url">medium.com</span></article></li><li><article class="card"><h3><a href="https://medium.com/veganismo-s" target="_blank" rel="noopener">Veganismo-S <span class="arrow" aria-hidden="true">↗</span></a></h3><p>Publicação no Medium sobre veganismo com base em evidências.</p><span class="url">medium.com</span></article></li><li><article class="card"><h3><a href="https://thinking.biblioverse.org" target="_blank" rel="noopener">Biblioteca de Racionalidade <span class="arrow" aria-hidden="true">↗</span></a></h3><p>Livros e recursos sobre pensamento crítico e vieses.</p><span class="url">thinking.biblioverse.org</span></article></li><li><article class="card"><h3><a href="https://philosophy.biblioverse.org" target="_blank" rel="noopener">Biblioteca de Filosofia <span class="arrow" aria-hidden="true">↗</span></a></h3><p>Correntes, autores e referências da filosofia.</p><span class="url">philosophy.biblioverse.org</span></article></li><li><article class="card is-wip"><div class="tags"><span class="tag wip">Em construção</span></div><h3><a href="https://politicaparainiciantes.biblioverse.org" target="_blank" rel="noopener">Política Para Iniciantes <span class="arrow" aria-hidden="true">↗</span></a></h3><p>Conceitos e ideias políticas explicados para quem está começando.</p><span class="url">politicaparainiciantes.biblioverse.org</span></article></li></ul></section><section class="section" id="livro" data-cat="livro" style="--c:var(--c-livro)" aria-labelledby="h-livro"><div class="sec-head"><div><h2 id="h-livro">Livros</h2><p>Um livro publicado e dois a caminho.</p></div><span class="count">3 projetos</span></div><ul class="grid"><li><article class="card"><div class="tags"><span class="tag">Publicado</span></div><h3>Meu Mundo em Listas</h3><p>Meu livro publicado, organizado em listas.</p></article></li><li><article class="card is-wip"><div class="tags"><span class="tag wip">Em escrita</span></div><h3>Veganismo Baseado em Evidências</h3><p>Racionalidade, especismo e vieses no movimento vegano.</p></article></li><li><article class="card is-wip"><div class="tags"><span class="tag wip">Em escrita</span></div><h3>10 Anos Sem Matar Animais</h3><p>Memórias de uma década de veganismo.</p></article></li></ul></section><section class="section" id="cur" data-cat="cur" style="--c:var(--c-cur)" aria-labelledby="h-cur"><div class="sec-head dark-text"><div><h2 id="h-cur">Curadoria</h2><p>Hubs e coleções com curadoria humana.</p></div><span class="count">3 projetos</span></div><ul class="grid"><li><article class="card"><h3><a href="https://biblioverse.org" target="_blank" rel="noopener">BiblioVerse <span class="arrow" aria-hidden="true">↗</span></a></h3><p>A biblioteca de tudo: hub de bibliotecas temáticas com curadoria humana.</p><span class="url">biblioverse.org</span></article></li><li><article class="card"><h3><a href="https://social.biblioverse.org" target="_blank" rel="noopener">Biblioteca de Redes Sociais <span class="arrow" aria-hidden="true">↗</span></a></h3><p>Plataformas, ferramentas e recursos para criadores.</p><span class="url">social.biblioverse.org</span></article></li><li><article class="card is-wip"><div class="tags"><span class="tag wip">Em construção</span></div><h3><a href="https://list.biblioverse.org" target="_blank" rel="noopener">Biblioteca de Listas <span class="arrow" aria-hidden="true">↗</span></a></h3><p>As melhores listas e rankings, reunidos em um só lugar.</p><span class="url">list.biblioverse.org</span></article></li></ul></section><section class="section" id="guia" data-cat="guia" style="--c:var(--c-guia)" aria-labelledby="h-guia"><div class="sec-head"><div><h2 id="h-guia">Guias e Diretórios</h2><p>Diretórios práticos para viver bem em Brisbane.</p></div><span class="count">3 projetos</span></div><ul class="grid"><li><article class="card"><h3><a href="https://brisbaneveganguide.com" target="_blank" rel="noopener">Brisbane Vegan Guide <span class="arrow" aria-hidden="true">↗</span></a></h3><p>Restaurantes e grupos veganos em Brisbane.</p><span class="url">brisbaneveganguide.com</span></article></li><li><article class="card"><h3><a href="https://brasileirosembrisbane.biblioverse.org" target="_blank" rel="noopener">Brasileiros em Brisbane <span class="arrow" aria-hidden="true">↗</span></a></h3><p>Diretório para estudantes de intercâmbio e imigrantes em Brisbane.</p><span class="url">brasileirosembrisbane.biblioverse.org</span></article></li><li><article class="card is-wip"><div class="tags"><span class="tag wip">Em construção</span></div><h3>Brissy Op Shops</h3><p>Guia para descobrir os brechós (op shops) de Brisbane.</p></article></li></ul></section><section class="section" id="hom" data-cat="hom" style="--c:var(--c-hom)" aria-labelledby="h-hom"><div class="sec-head"><div><h2 id="h-hom">Homenagens</h2><p>Memória e afeto em forma de site.</p></div><span class="count">1 projeto</span></div><ul class="grid"><li><article class="card"><h3><a href="https://arliprado.com.br" target="_blank" rel="noopener">Arli Prado <span class="arrow" aria-hidden="true">↗</span></a></h3><p>Memorial em homenagem à minha mãe.</p><span class="url">arliprado.com.br</span></article></li></ul></section><section class="section" id="out" data-cat="out" style="--c:var(--c-out)" aria-labelledby="h-out"><div class="sec-head"><div><h2 id="h-out">Outros</h2><p>Bibliotecas temáticas, blogs de estética e projetos que estão nascendo.</p></div><span class="count">12 projetos</span></div><ul class="grid"><li><article class="card"><div class="tags"><span class="tag">Estética alternativa</span></div><h3><a href="https://inkvillains.tumblr.com" target="_blank" rel="noopener">IV <span class="arrow" aria-hidden="true">↗</span></a></h3><p>Tumblr de estética alternativa.</p><span class="url">inkvillains.tumblr.com</span></article></li><li><article class="card"><div class="tags"><span class="tag">Estética</span></div><h3><a href="https://blackbeautyiseverywhere.tumblr.com" target="_blank" rel="noopener">BBIE <span class="arrow" aria-hidden="true">↗</span></a></h3><p>Tumblr que celebra a beleza negra em todo lugar.</p><span class="url">blackbeautyiseverywhere.tumblr.com</span></article></li><li><article class="card"><div class="tags"><span class="tag">Programação</span></div><h3><a href="https://code.biblioverse.org" target="_blank" rel="noopener">Biblioteca de Programação <span class="arrow" aria-hidden="true">↗</span></a></h3><p>Linguagens, cursos e ferramentas para aprender a programar.</p><span class="url">code.biblioverse.org</span></article></li><li><article class="card"><div class="tags"><span class="tag">Games</span></div><h3><a href="https://games.biblioverse.org" target="_blank" rel="noopener">Biblioteca de Games <span class="arrow" aria-hidden="true">↗</span></a></h3><p>Plataformas, jogos e o universo dos games.</p><span class="url">games.biblioverse.org</span></article></li><li><article class="card is-wip"><div class="tags"><span class="tag">Música</span><span class="tag wip">Em construção</span></div><h3><a href="https://music.biblioverse.org" target="_blank" rel="noopener">Biblioteca de Música <span class="arrow" aria-hidden="true">↗</span></a></h3><p>Apps, gêneros, gravadoras e conceitos fundamentais da música.</p><span class="url">music.biblioverse.org</span></article></li><li><article class="card is-wip"><div class="tags"><span class="tag">Música</span><span class="tag wip">Em construção</span></div><h3><a href="https://mymusictaste.biblioverse.org" target="_blank" rel="noopener">My Music Taste <span class="arrow" aria-hidden="true">↗</span></a></h3><p>Meus gostos musicais em forma de infográfico.</p><span class="url">mymusictaste.biblioverse.org</span></article></li><li><article class="card is-wip"><div class="tags"><span class="tag">Dados</span><span class="tag wip">Em construção</span></div><h3><a href="https://data.biblioverse.org" target="_blank" rel="noopener">Biblioteca de Dados <span class="arrow" aria-hidden="true">↗</span></a></h3><p>Fontes de dados, visualização e análise.</p><span class="url">data.biblioverse.org</span></article></li><li><article class="card is-wip"><div class="tags"><span class="tag">Web3</span><span class="tag wip">Em construção</span></div><h3><a href="https://web3.biblioverse.org" target="_blank" rel="noopener">Biblioteca de Web3 <span class="arrow" aria-hidden="true">↗</span></a></h3><p>Blockchain, carteiras e o ecossistema descentralizado.</p><span class="url">web3.biblioverse.org</span></article></li><li><article class="card is-wip"><div class="tags"><span class="tag">Produtividade</span><span class="tag wip">Em construção</span></div><h3><a href="https://management.biblioverse.org" target="_blank" rel="noopener">Biblioteca de Organização <span class="arrow" aria-hidden="true">↗</span></a></h3><p>Apps e métodos de produtividade e gestão.</p><span class="url">management.biblioverse.org</span></article></li><li><article class="card is-wip"><div class="tags"><span class="tag">Carreira</span><span class="tag wip">Em construção</span></div><h3><a href="https://job.biblioverse.org" target="_blank" rel="noopener">Biblioteca de Emprego <span class="arrow" aria-hidden="true">↗</span></a></h3><p>Sites de vagas, currículo e carreira.</p><span class="url">job.biblioverse.org</span></article></li><li><article class="card is-wip"><div class="tags"><span class="tag">Produtividade</span><span class="tag wip">Em construção</span></div><h3>App de organização</h3><p>Nome secreto. Um app para deixar a rotina mais organizada.</p></article></li><li><article class="card is-wip"><div class="tags"><span class="tag">Música</span><span class="tag wip">Em construção</span></div><h3>Teoria Musical</h3><p>Nome secreto. Teoria musical explicada de um jeito novo.</p></article></li></ul></section></main>
+  <section class="invite" aria-labelledby="h-invite">
+    <div><h2 id="h-invite">Quer fazer parte?</h2><p>Muitos desses projetos são colaborativos e estão sempre crescendo. Se você quer sugerir um link, ajudar na curadoria de uma biblioteca, traduzir, revisar ou criar algo junto, me chama.</p></div>
+    <div class="invite-actions">
+      <a class="btn btn-dark" href="https://instagram.com/sencientista" target="_blank" rel="noopener">Chamar no Instagram</a>
+      <a class="btn btn-line" href="https://linkedin.com/in/juliocesarprava" target="_blank" rel="noopener">Conectar no LinkedIn</a>
+    </div>
+  </section>
+  <footer>
+    <span>Julio Cesar Prava · Brisbane, Austrália</span>
+    <span>Última atualização: <time datetime="2026-10-18">18 de outubro de 2026</time></span>
+  </footer>
+</div>
+<script>(function(){
+  var filter = document.getElementById("filter");
+  var sections = document.getElementById("projetos");
+
+  function setFilterH(){ document.documentElement.style.setProperty("--filter-h", (filter.offsetHeight + 12) + "px"); }
+  setFilterH();
+  window.addEventListener("resize", setFilterH);
+
+  function applyFilter(f, target){
+    filter.querySelectorAll("button").forEach(function(b){ b.setAttribute("aria-pressed", b.dataset.f === f ? "true" : "false"); });
+    sections.querySelectorAll(".section").forEach(function(s){ s.hidden = f !== "all" && s.dataset.cat !== f; });
+    var active = filter.querySelector('[data-f="' + f + '"]');
+    if(active && filter.scrollWidth > filter.clientWidth){
+      filter.scrollLeft = active.offsetLeft - filter.clientWidth / 2 + active.offsetWidth / 2;
+    }
+    var el = target || sections;
+    var top = el.getBoundingClientRect().top + window.scrollY - filter.offsetHeight - 8;
+    if(target || window.scrollY > top) window.scrollTo({ top: top, behavior: "smooth" });
+  }
+
+  filter.addEventListener("click", function(e){
+    var b = e.target.closest("button"); if(!b) return;
+    applyFilter(b.dataset.f);
+  });
+
+  document.getElementById("atalhos").addEventListener("click", function(e){
+    var a = e.target.closest("a[data-f]"); if(!a) return;
+    e.preventDefault();
+    var t = document.getElementById(a.dataset.f);
+    applyFilter("all", t);
+    if(history.replaceState) history.replaceState(null, "", "#" + a.dataset.f);
+  });
+
+  // Guarda a escolha de idioma quando a pessoa usa o seletor
+  document.querySelectorAll(".lang a[hreflang]").forEach(function(a){
+    a.addEventListener("click", function(){
+      try { localStorage.setItem("jcp-lang", a.dataset.lang); } catch(err){}
+    });
+  });
+
+  // Animação do nome: "Prado da Silva" vira "Prava"
+  var el = document.getElementById("name"), caret = document.getElementById("caret");
+  var FULL = "Julio Cesar Prado da Silva", KEEP = "Julio Cesar Pra", FINAL = "Julio Cesar Prava";
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if(reduce){ el.textContent = FINAL; caret.hidden = true; return; }
+  var text = FULL;
+  function step(fn, ms){ setTimeout(fn, ms); }
+  function erase(){
+    if(text.length > KEEP.length){ text = text.slice(0, -1); el.textContent = text; step(erase, 70); }
+    else step(type, 350);
+  }
+  function type(){
+    if(text.length < FINAL.length){ text = FINAL.slice(0, text.length + 1); el.textContent = text; step(type, 140); }
+    else {
+      caret.addEventListener("animationend", function(){ caret.hidden = true; }, { once: true });
+      caret.classList.add("done");
+    }
+  }
+  step(erase, 1400);
+})();</script>
+</body>
+</html>
