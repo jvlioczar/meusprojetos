@@ -165,7 +165,7 @@ PROJECTS = [
   P("inter", ("Biblioteca de Idiomas", "Language Library"), "https://language.biblioverse.org",
     ("Apps, canais e métodos para aprender idiomas.", "Apps, channels and methods for learning languages.")),
   P("inter", ("Biblioteca de Viagem", "Travel Library"), "https://travel.biblioverse.org",
-    ("Ferramentas para planejar viagens e intercâmbio.", "Tools for planning trips and study abroad.")),
+    ("Ferramentas para planejar viagens e intercâmbio.", "Tools for planning trips and study abroad."), "wip"),
 
   # Pensamento crítico
   P("pens", ("Teste de Visão Moral", "Moral Outlook Test"), "https://ethicstest.biblioverse.org",
