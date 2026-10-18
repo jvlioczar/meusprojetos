@@ -190,7 +190,7 @@ PROJECTS = [
     ("Conceitos e ideias políticas explicados para quem está começando.", "Political ideas and concepts explained for people just starting out."), "wip"),
 
   # Livros
-  P("livro", ("Meu Mundo em Listas", "Meu Mundo em Listas"), None,
+  P("livro", ("Meu Mundo em Listas", "Meu Mundo em Listas"), "https://clubedeautores.com.br/livro/meu-mundo-em-listas",
     ("Meu livro publicado, organizado em listas.", "My published book, told through lists (in Portuguese)."), tags=[T["pub"]]),
   P("livro", ("Veganismo Baseado em Evidências", "Veganismo Baseado em Evidências"), None,
     ("Racionalidade, especismo e vieses no movimento vegano.", "Evidence-based veganism: rationality, speciesism and biases in the vegan movement."), "writing"),
