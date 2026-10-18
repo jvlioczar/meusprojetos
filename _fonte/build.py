@@ -88,7 +88,7 @@ SAME_AS = [
 # CATEGORIAS  (dark=True: texto escuro sobre a cor)
 # ------------------------------------------------------------------
 CATEGORIES = [
-  dict(id="design", color="--c-design", dark=True,
+  dict(id="design", color="--c-design",
        pt=("Design", None, "Bibliotecas, blogs e inspiração para quem trabalha com design."),
        en=("Design", None, "Libraries, blogs and inspo for anyone who works in design.")),
   dict(id="ia", color="--c-ia",
@@ -103,7 +103,7 @@ CATEGORIES = [
   dict(id="livro", color="--c-livro",
        pt=("Livros", None, "Um livro publicado e dois a caminho."),
        en=("Books", None, "One book out, two on the way.")),
-  dict(id="cur", color="--c-cur", dark=True,
+  dict(id="cur", color="--c-cur",
        pt=("Curadoria", None, "Hubs e coleções com curadoria humana."),
        en=("Curation", None, "Hand-picked hubs and collections, curated by real people.")),
   dict(id="guia", color="--c-guia",
@@ -248,7 +248,7 @@ CSS = r"""
 :root{
   color-scheme:light;
   --bg:#F3F2F8; --surface:#FFFFFF; --ink:#16141F; --muted:#5E5B6E; --line:#E3E1EC;
-  --c-design:#F2661B; --c-ia:#5B3FD1; --c-inter:#0E855C; --c-pens:#DB2877; --c-cur:#FFC21F;
+  --c-design:#F2661B; --c-ia:#5B3FD1; --c-inter:#0E855C; --c-pens:#DB2877; --c-cur:#C28A00; --c-yellow:#FFC21F;
   --c-hom:#8B3A62; --c-guia:#1463F3; --c-out:#3E4460; --c-livro:#C62F3A;
   --font-display:"Gabarito","Trebuchet MS",system-ui,sans-serif;
   --font-body:"Figtree",system-ui,-apple-system,"Segoe UI",sans-serif;
@@ -389,7 +389,7 @@ body::before{content:""; position:fixed; inset:0 0 auto; height:env(safe-area-in
 
 /* Invite + footer */
 .invite{
-  margin-top:28px; background:var(--c-cur); color:var(--ink); border-radius:var(--r-lg);
+  margin-top:28px; background:var(--c-yellow); color:var(--ink); border-radius:var(--r-lg);
   padding:32px clamp(22px,4vw,48px); display:grid; grid-template-columns:minmax(0,1fr) auto; gap:20px 32px; align-items:end;
 }
 .invite h2{margin:0 0 8px; font:900 clamp(30px,4.4vw,48px)/1 var(--font-display); letter-spacing:-.015em}
