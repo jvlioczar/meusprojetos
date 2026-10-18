@@ -286,16 +286,16 @@ a{color:inherit}
 .lang a:not([aria-current="true"]):hover{color:var(--ink)}
 
 /* Hero */
-.hero{display:grid; grid-template-columns:1.7fr 1fr; gap:16px}
+.hero{display:grid; grid-template-columns:1.9fr 1fr; gap:16px}
 .hero-main{
   background:var(--surface); border:1.5px solid var(--line);
-  border-radius:var(--r-lg); padding:40px clamp(24px,4vw,48px) 0;
-  display:grid; grid-template-columns:minmax(0,1fr) 260px; column-gap:24px;
+  border-radius:var(--r-lg); padding:40px clamp(24px,3.4vw,40px) 0;
+  display:grid; grid-template-columns:minmax(0,1fr) 230px; column-gap:20px;
   position:relative; overflow:hidden; min-width:0;
 }
 .intro{display:flex; flex-direction:column; gap:12px; padding-bottom:40px; min-width:0; container-type:inline-size}
 .hello{font-weight:600; font-size:14px; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); margin:0}
-.hero h1{font-family:var(--font-display); font-weight:900; font-size:32px; font-size:clamp(24px,7cqi,50px); line-height:1.05; margin:0; letter-spacing:-.02em; white-space:nowrap}
+.hero h1{font-family:var(--font-display); font-weight:900; font-size:34px; font-size:clamp(24px,7.4cqi,56px); line-height:1.05; margin:0; letter-spacing:-.02em; white-space:nowrap}
 .caret{display:inline-block; width:.08em; height:.85em; background:var(--ink); margin-left:.04em; vertical-align:-.05em; animation:blink 1s steps(1) infinite}
 .caret.done{animation:blink3 .8s linear 3 forwards}
 @keyframes blink{50%{opacity:0}}
@@ -305,7 +305,7 @@ a{color:inherit}
 .socials a{display:inline-block; text-decoration:none; font-weight:600; font-size:14px; padding:8px 16px; border-radius:var(--r-sm); border:1.5px solid var(--ink); background:var(--surface)}
 .socials a:hover{background:var(--ink); color:var(--surface)}
 .me{position:relative; align-self:end; height:290px; margin:0}
-.me img{position:absolute; bottom:0; left:50%; transform:translateX(-50%); width:220px; height:auto; display:block}
+.me img{position:absolute; bottom:0; left:50%; transform:translateX(-50%); width:210px; height:auto; display:block}
 .stats{list-style:none; margin:0; padding:0}
 .stat{position:absolute; z-index:1; color:#fff; padding:8px 14px; border-radius:16px; font:600 13px/1.2 var(--font-body); box-shadow:0 6px 16px rgba(22,20,31,.18)}
 .stat b{display:block; font:900 24px/1 var(--font-display); font-variant-numeric:tabular-nums}
@@ -492,7 +492,7 @@ JS = r"""
     probe.textContent = FULL;
     h1.appendChild(probe);
     var w = probe.getBoundingClientRect().width, avail = h1.clientWidth;
-    if(w > avail){ h1.style.fontSize = Math.floor(parseFloat(getComputedStyle(h1).fontSize) * avail / w * 0.97) + "px"; }
+    if(w > avail){ h1.style.fontSize = Math.floor(parseFloat(getComputedStyle(h1).fontSize) * avail / w * 0.995) + "px"; }
     h1.removeChild(probe);
   }
   fit();
