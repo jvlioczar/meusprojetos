@@ -286,7 +286,7 @@ a{color:inherit}
 }
 .intro{display:flex; flex-direction:column; gap:12px; padding-bottom:40px; min-width:0; container-type:inline-size}
 .hello{font-weight:600; font-size:14px; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); margin:0}
-.hero h1{font-family:var(--font-display); font-weight:900; font-size:40px; font-size:clamp(30px,10cqi,60px); line-height:1; margin:0; letter-spacing:-.02em}
+.hero h1{font-family:var(--font-display); font-weight:900; font-size:34px; font-size:clamp(24px,7.4cqi,52px); line-height:1.05; margin:0; letter-spacing:-.02em; white-space:nowrap}
 .caret{display:inline-block; width:.08em; height:.85em; background:var(--ink); margin-left:.04em; vertical-align:-.05em; animation:blink 1s steps(1) infinite}
 .caret.done{animation:blink3 .8s linear 3 forwards}
 @keyframes blink{50%{opacity:0}}
@@ -474,6 +474,21 @@ JS = r"""
   // Animação do nome: "Prado da Silva" vira "Prava"
   var el = document.getElementById("name"), caret = document.getElementById("caret");
   var FULL = "Julio Cesar Prado da Silva", KEEP = "Julio Cesar Pra", FINAL = "Julio Cesar Prava";
+  // Ajusta o tamanho para o nome completo caber em uma linha, sem pular de linha na animação
+  var h1 = el.parentNode;
+  function fit(){
+    h1.style.fontSize = "";
+    var probe = document.createElement("span");
+    probe.style.cssText = "position:absolute;visibility:hidden;white-space:nowrap";
+    probe.textContent = FULL;
+    h1.appendChild(probe);
+    var w = probe.getBoundingClientRect().width, avail = h1.clientWidth;
+    if(w > avail){ h1.style.fontSize = Math.floor(parseFloat(getComputedStyle(h1).fontSize) * avail / w * 0.98) + "px"; }
+    h1.removeChild(probe);
+  }
+  fit();
+  if(document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
+  window.addEventListener("resize", fit);
   var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   if(reduce){ el.textContent = FINAL; caret.hidden = true; return; }
   var text = FULL;
