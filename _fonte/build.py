@@ -15,7 +15,7 @@ from datetime import date
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 SITE_URL = "https://meusprojetos.biblioverse.org"
-LAST_UPDATED = date(2026, 10, 18)
+LAST_UPDATED = date(2026, 10, 19)
 
 # ------------------------------------------------------------------
 # TEXTOS DA INTERFACE
@@ -112,6 +112,9 @@ CATEGORIES = [
   dict(id="hom", color="--c-hom",
        pt=("Homenagens", None, "Memória e afeto em forma de site."),
        en=("Tributes", None, "Memory and love, in website form.")),
+  dict(id="esp", color="--c-esp",
+       pt=("Esportes", None, "Os maiores atletas, lendas e clubes, e a comunidade dos esports."),
+       en=("Sport", None, "The greatest athletes, legends and clubs, plus the esports community.")),
   dict(id="out", color="--c-out",
        pt=("Outros", None, "Bibliotecas temáticas, blogs de estética e projetos que estão nascendo."),
        en=("Other", None, "Themed libraries, aesthetics blogs and a few projects still taking shape.")),
@@ -210,6 +213,8 @@ PROJECTS = [
     ("Restaurantes e grupos veganos em Brisbane.", "Vegan restaurants and groups around Brisbane.")),
   P("guia", ("Brasileiros em Brisbane", "Brazilians in Brisbane"), "https://brasileirosembrisbane.biblioverse.org",
     ("Diretório para estudantes de intercâmbio e imigrantes em Brisbane.", "A directory for international students and migrants in Brisbane.")),
+  P("guia", ("Comida do Futuro", "Future Food"), "https://futurefood.biblioverse.org",
+    ("Diretório de empresas de proteínas alternativas.", "A directory of alternative protein companies."), "wip"),
   P("guia", ("Brissy Op Shops", "Brissy Op Shops"), None,
     ("Guia para descobrir os brechós (op shops) de Brisbane.", "Your guide to finding Brisbane's best op shops."), "wip"),
 
@@ -217,15 +222,21 @@ PROJECTS = [
   P("hom", ("Arli Prado", "Arli Prado"), "https://arliprado.com.br",
     ("Memorial em homenagem à minha mãe.", "A memorial for my mum.")),
 
+  # Esportes
+  P("esp", ("GOAT", "GOAT"), "https://goat.biblioverse.org",
+    ("Os melhores de todos os tempos nos esportes.", "The GOATs: the greatest athletes of all time, across every sport.")),
+  P("esp", ("Lendas do Futebol Brasileiro", "Brazilian Football Legends"), None,
+    ("Os grandes nomes da história do futebol brasileiro.", "The biggest names in the history of Brazilian football."), "wip"),
+  P("esp", ("Os Maiores Clubes do Mundo", "The World's Biggest Clubs"), None,
+    ("Os clubes mais vitoriosos e importantes do planeta.", "The most successful and influential football clubs on the planet."), "wip"),
+  P("esp", ("Valorant Spikers", "Valorant Spikers"), "https://www.facebook.com/groups/spikers.org",
+    ("Grupo de comunidade brasileira dedicada ao FPS da Riot Games.", "A Brazilian community group for Riot Games' FPS, Valorant."), tags=[T["esports"]]),
+
   # Outros
   P("out", ("IV", "IV"), "https://inkvillains.tumblr.com",
     ("Tumblr de estética alternativa.", "A Tumblr of alternative aesthetics."), tags=[T["altaes"]]),
   P("out", ("BBIE", "BBIE"), "https://blackbeautyiseverywhere.tumblr.com",
     ("Tumblr que celebra a beleza negra em todo lugar.", "A Tumblr celebrating Black beauty everywhere."), tags=[T["aes"]]),
-  P("out", ("GOAT", "GOAT"), "https://goat.biblioverse.org",
-    ("Os melhores de todos os tempos nos esportes.", "The GOATs: the greatest athletes of all time, across every sport."), "wip", [T["sport"]]),
-  P("out", ("Valorant Spikers", "Valorant Spikers"), "https://www.facebook.com/groups/spikers.org",
-    ("Grupo de comunidade brasileira dedicada ao FPS da Riot Games.", "A Brazilian community group for Riot Games' FPS, Valorant."), tags=[T["esports"]]),
   P("out", ("Biblioteca de Programação", "Coding Library"), "https://code.biblioverse.org",
     ("Linguagens, cursos e ferramentas para aprender a programar.", "Languages, courses and tools for learning to code."), tags=[T["code"]]),
   P("out", ("Biblioteca de Games", "Gaming Library"), "https://games.biblioverse.org",
@@ -257,7 +268,7 @@ CSS = r"""
   color-scheme:light;
   --bg:#F3F2F8; --surface:#FFFFFF; --ink:#16141F; --muted:#5E5B6E; --line:#E3E1EC;
   --c-design:#F2661B; --c-ia:#5B3FD1; --c-inter:#0E855C; --c-pens:#DB2877; --c-cur:#C28A00; --c-yellow:#FFC21F;
-  --c-hom:#8B3A62; --c-guia:#1463F3; --c-out:#3E4460; --c-livro:#C62F3A;
+  --c-hom:#8B3A62; --c-guia:#1463F3; --c-out:#3E4460; --c-livro:#C62F3A; --c-esp:#0B7285;
   --font-display:"Gabarito","Trebuchet MS",system-ui,sans-serif;
   --font-body:"Figtree",system-ui,-apple-system,"Segoe UI",sans-serif;
   --r-lg:32px; --r-md:20px; --r-sm:999px;
