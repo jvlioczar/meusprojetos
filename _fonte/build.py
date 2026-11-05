@@ -43,6 +43,12 @@ UI = {
     "invite_li": "Conectar no LinkedIn",
     "place": "Brisbane, Austrália",
     "updated": "Última atualização",
+    "rights": "Todos os direitos reservados.",
+    "privacy": "Privacidade",
+    "privacy_title": "Política de privacidade",
+    "privacy_seo": "Política de privacidade · Julio Cesar Prava",
+    "privacy_desc": "Como o site meusprojetos.biblioverse.org trata os seus dados: sem cadastro, sem cookies de rastreamento e sem anúncios.",
+    "back": "Voltar para os projetos",
     "months": ["janeiro","fevereiro","março","abril","maio","junho","julho","agosto","setembro","outubro","novembro","dezembro"],
     "job": "Designer gráfico",
   },
@@ -68,6 +74,12 @@ UI = {
     "invite_li": "Connect on LinkedIn",
     "place": "Brisbane, Australia",
     "updated": "Last updated",
+    "rights": "All rights reserved.",
+    "privacy": "Privacy",
+    "privacy_title": "Privacy policy",
+    "privacy_seo": "Privacy policy · Julio Cesar Prava",
+    "privacy_desc": "How meusprojetos.biblioverse.org handles your data: no sign-up, no tracking cookies and no ads.",
+    "back": "Back to the projects",
     "months": ["January","February","March","April","May","June","July","August","September","October","November","December"],
     "job": "Graphic designer",
   },
@@ -282,7 +294,7 @@ CSS = r"""
 :root{
   color-scheme:light;
   --bg:#F3F2F8; --surface:#FFFFFF; --ink:#16141F; --muted:#5E5B6E; --line:#E3E1EC;
-  --c-design:#F2661B; --c-ia:#5B3FD1; --c-inter:#0E855C; --c-pens:#DB2877; --c-cur:#C28A00; --c-yellow:#FFC21F;
+  --c-design:#C74D0B; --c-ia:#5B3FD1; --c-inter:#0E855C; --c-pens:#DB2877; --c-cur:#996D00; --c-yellow:#FFC21F;
   --c-hom:#8B3A62; --c-esp:#0D7A72; --c-guia:#1463F3; --c-out:#3E4460; --c-livro:#C62F3A;
   --font-display:"Gabarito","Trebuchet MS",system-ui,sans-serif;
   --font-body:"Figtree",system-ui,-apple-system,"Segoe UI",sans-serif;
@@ -337,7 +349,7 @@ a{color:inherit}
 .stats{list-style:none; margin:0; padding:0}
 .stat{position:absolute; z-index:1; color:#fff; padding:8px 14px; border-radius:16px; font:600 13px/1.2 var(--font-body); box-shadow:0 6px 16px rgba(22,20,31,.18)}
 .stat b{display:block; font:900 24px/1 var(--font-display); font-variant-numeric:tabular-nums}
-.stat-1{background:var(--c-design); color:var(--ink); top:8px; left:0; transform:rotate(-6deg)}
+.stat-1{background:var(--c-design); top:8px; left:0; transform:rotate(-6deg)}
 .stat-2{background:var(--c-ia); top:96px; right:0; transform:rotate(5deg)}
 .stat-3{background:var(--c-inter); bottom:36px; left:0; transform:rotate(-3deg)}
 
@@ -457,12 +469,42 @@ footer{border-top:1.5px solid var(--line); padding-top:20px; margin-top:8px; dis
   .me{height:250px}
   .me img{width:200px}
 }
+footer a{color:inherit}
+.legal{max-width:720px; margin:0 auto; display:flex; flex-direction:column; gap:20px; padding-top:24px}
+.legal article{background:var(--surface); border:1.5px solid var(--line); border-radius:var(--r-lg); padding:clamp(24px,4vw,44px)}
+.legal h1{font:900 clamp(32px,5vw,48px)/1.05 var(--font-display); margin:0 0 8px; letter-spacing:-.015em}
+.legal h2{font:800 21px/1.2 var(--font-display); margin:28px 0 8px}
+.legal p,.legal li{color:var(--muted)}
+.legal a{color:var(--ink); font-weight:600}
+@media print{
+  @page{margin:14mm}
+  body{background:#fff; padding:0; font-size:11pt}
+  body::before,.skip,.topbar,.filter,.hero-tiles,.invite-actions,.caret,.stats{display:none!important}
+  .hero{display:block}
+  .hero-main{display:block; border:0; padding:0}
+  .me{display:none}
+  .section[hidden]{display:flex!important}
+  .sec-head{min-height:0; padding:10px 14px; border-radius:10px; -webkit-print-color-adjust:exact; print-color-adjust:exact}
+  .grid{grid-template-columns:repeat(3,minmax(0,1fr)); gap:8px}
+  .card{break-inside:avoid; padding:10px; border-radius:10px; transform:none!important}
+  .card p{font-size:9.5pt}
+  .card h3 a::after{content:none}
+  .invite{background:none; border:1.5px solid #000; padding:16px; margin-top:12px}
+  a{text-decoration:none}
+}
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   *{transition:none!important}
   .caret{animation:none}
 }
 """.strip()
+import re as _re
+def _min_css(c):
+    c = _re.sub(r"/\*.*?\*/", "", c, flags=_re.S)
+    c = _re.sub(r"\s+", " ", c)
+    c = _re.sub(r"\s*([{};,>])\s*", r"\1", c)
+    return c.replace(";}", "}").strip()
+CSS = _min_css(CSS)
 
 # ------------------------------------------------------------------
 # JS (filtros, atalhos, animação do nome, escolha de idioma)
@@ -653,8 +695,8 @@ def render_body(lang, links):
     </div>
   </section>
   <footer>
-    <span>Julio Cesar Prava · {e(u["place"])}</span>
-    <span>{e(u["updated"])}: <time datetime="{d.isoformat()}">{fmt_date(d, lang)}</time></span>
+    <span>© {d.year} Julio Cesar Prava · {e(u["place"])} · {e(u["rights"])}</span>
+    <span><a href="{links["privacy"]}">{e(u["privacy"])}</a> · {e(u["updated"])}: <time datetime="{d.isoformat()}">{fmt_date(d, lang)}</time></span>
   </footer>
 </div>
 <script>{JS}</script>"""
@@ -686,6 +728,13 @@ def json_ld(lang, url):
     }
     return '<script type="application/ld+json">' + json.dumps(data, ensure_ascii=False) + "</script>"
 
+ICONS = '''<link rel="icon" href="/favicon.png" type="image/png" sizes="64x64">
+<link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">'''
+
+NOSCRIPT = '<noscript><style>#name,#caret,.filter{display:none!important}.hero h1 .sr-only{position:static!important;width:auto;height:auto;margin:0;clip:auto;overflow:visible;white-space:nowrap}</style></noscript>'
+
 FONTS = '''<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gabarito:wght@800;900&family=Figtree:wght@400;600;700&display=swap">'''
@@ -693,7 +742,7 @@ FONTS = '''<link rel="preconnect" href="https://fonts.googleapis.com">
 def page_github(lang):
     u = UI[lang]
     url = SITE_URL + ("/" if lang == "pt" else "/en/")
-    links = {"pt": "/", "en": "/en/", "img": "/"}
+    links = {"pt": "/", "en": "/en/", "img": "/", "privacy": "/privacidade/" if lang == "pt" else "/en/privacy/"}
     other = "/en/" if lang == "pt" else "/"
     return f"""<!doctype html>
 <html lang="{u["html_lang"]}">
@@ -710,8 +759,7 @@ def page_github(lang):
 <link rel="alternate" hreflang="en-AU" href="{SITE_URL}/en/">
 <link rel="alternate" hreflang="en" href="{SITE_URL}/en/">
 <link rel="alternate" hreflang="x-default" href="{SITE_URL}/">
-<link rel="icon" href="/favicon.png" type="image/png" sizes="64x64">
-<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+{ICONS}
 <meta property="og:type" content="profile">
 <meta property="og:site_name" content="Julio Cesar Prava">
 <meta property="og:title" content="{e(u["seo_title"])}">
@@ -731,6 +779,7 @@ def page_github(lang):
 <meta name="twitter:image" content="{SITE_URL}/og-image.png">
 {lang_detect_script(lang, other)}
 {FONTS}
+{NOSCRIPT}
 <style>
 {CSS}
 </style>
@@ -745,18 +794,19 @@ def page_github(lang):
 def page_preview(lang):
     # Pré-visualização no Claude: a página PT é envolvida pelo próprio visualizador; a EN é um arquivo à parte
     if lang == "pt":
-        links = {"pt": "index.html", "en": "en/index.html", "img": ""}
+        links = {"pt": "index.html", "en": "en/index.html", "img": "", "privacy": "privacidade/index.html"}
         return f"""<title>Julio Cesar Prava</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <meta name="description" content="{e(UI["pt"]["seo_desc"])}">
 {lang_detect_script("pt", "en/index.html")}
 {FONTS}
+{NOSCRIPT}
 <style>
 {CSS}
 </style>
 {render_body("pt", links)}
 """
-    links = {"pt": "../index.html", "en": "index.html", "img": "../"}
+    links = {"pt": "../index.html", "en": "index.html", "img": "../", "privacy": "privacy/index.html"}
     return f"""<!doctype html>
 <html lang="en-AU">
 <head>
@@ -765,6 +815,7 @@ def page_preview(lang):
 <title>Julio Cesar Prava</title>
 {lang_detect_script("en", "../index.html")}
 {FONTS}
+{NOSCRIPT}
 <style>
 {CSS}
 </style>
@@ -783,7 +834,7 @@ def page_404():
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Página não encontrada · Julio Cesar Prava</title>
 <meta name="robots" content="noindex">
-<link rel="icon" href="/favicon.png" type="image/png">
+{ICONS}
 {FONTS}
 <style>
 {CSS}
@@ -798,16 +849,109 @@ def page_404():
 <p>Esta página não existe. <span lang="en-AU">This page doesn't exist.</span></p>
 <p><a class="btn btn-dark" href="/">Ver projetos</a> <a class="btn btn-line" href="/en/" lang="en-AU">See projects</a></p>
 </div></main>
+<footer><span>© {LAST_UPDATED.year} Julio Cesar Prava</span><span><a href="/privacidade/">Privacidade</a> · <a href="/en/privacy/" lang="en-AU">Privacy</a></span></footer>
 </body>
 </html>
 """
+
+PRIVACY_BODY = {
+  "pt": """<p>Este é um site pessoal e estático, que apenas mostra os meus projetos. Não há cadastro, formulário, comentários, anúncios nem ferramentas de análise ou rastreamento.</p>
+<h2>O que fica salvo no seu aparelho</h2>
+<p>O site guarda uma única preferência no armazenamento local do navegador (<code>localStorage</code>): o idioma escolhido, português ou inglês, para abrir a versão certa na próxima visita. Esse dado não sai do seu aparelho e você pode apagá-lo limpando os dados do site no navegador. O site não usa cookies.</p>
+<h2>Serviços de terceiros</h2>
+<ul>
+<li><strong>GitHub Pages</strong> hospeda o site. Como qualquer servidor, ele recebe o endereço IP e dados técnicos do navegador para entregar a página e proteger o serviço. Veja a <a href="https://docs.github.com/pt/site-policy/privacy-policies/github-general-privacy-statement" rel="noopener">declaração de privacidade do GitHub</a>.</li>
+<li><strong>Google Fonts</strong> fornece as fontes do site, então o seu navegador faz um pedido aos servidores do Google ao abrir a página. Veja a <a href="https://developers.google.com/fonts/faq/privacy" rel="noopener">política do Google Fonts</a>.</li>
+</ul>
+<p>Os links dos cards levam a outros sites, cada um com a sua própria política de privacidade.</p>
+<h2>Contato</h2>
+<p>Dúvidas sobre privacidade: fale comigo pelo <a href="https://instagram.com/sencientista" rel="noopener">Instagram</a> ou pelo <a href="https://linkedin.com/in/juliocesarprava" rel="noopener">LinkedIn</a>.</p>""",
+  "en": """<p>This is a personal, static website that simply shows my projects. There's no sign-up, no forms, no comments, no ads and no analytics or tracking tools.</p>
+<h2>What's stored on your device</h2>
+<p>The site keeps a single preference in your browser's local storage (<code>localStorage</code>): the language you picked, Portuguese or English, so the right version opens next time. It never leaves your device, and you can delete it by clearing this site's data in your browser. The site doesn't use cookies.</p>
+<h2>Third-party services</h2>
+<ul>
+<li><strong>GitHub Pages</strong> hosts the site. Like any web server, it receives your IP address and technical browser details to deliver the page and keep the service secure. See <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" rel="noopener">GitHub's privacy statement</a>.</li>
+<li><strong>Google Fonts</strong> serves the site's fonts, so your browser makes a request to Google's servers when the page loads. See the <a href="https://developers.google.com/fonts/faq/privacy" rel="noopener">Google Fonts privacy FAQ</a>.</li>
+</ul>
+<p>Project cards link to other websites, each with its own privacy policy.</p>
+<h2>Contact</h2>
+<p>Questions about privacy? Message me on <a href="https://instagram.com/sencientista" rel="noopener">Instagram</a> or <a href="https://linkedin.com/in/juliocesarprava" rel="noopener">LinkedIn</a>.</p>""",
+}
+
+def page_privacy(lang):
+    u = UI[lang]
+    path = "/privacidade/" if lang == "pt" else "/en/privacy/"
+    home = "/" if lang == "pt" else "/en/"
+    d = LAST_UPDATED
+    return f"""<!doctype html>
+<html lang="{u["html_lang"]}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{e(u["privacy_seo"])}</title>
+<meta name="description" content="{e(u["privacy_desc"])}">
+<meta name="author" content="Julio Cesar Prava">
+<meta name="theme-color" content="#F3F2F8">
+<link rel="canonical" href="{SITE_URL}{path}">
+<link rel="alternate" hreflang="pt-BR" href="{SITE_URL}/privacidade/">
+<link rel="alternate" hreflang="en-AU" href="{SITE_URL}/en/privacy/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Julio Cesar Prava">
+<meta property="og:title" content="{e(u["privacy_seo"])}">
+<meta property="og:description" content="{e(u["privacy_desc"])}">
+<meta property="og:url" content="{SITE_URL}{path}">
+<meta property="og:image" content="{SITE_URL}/og-image.png">
+<meta property="og:locale" content="{u["og_locale"]}">
+{ICONS}
+{FONTS}
+<style>
+{CSS}
+</style>
+</head>
+<body>
+<a class="skip" href="#conteudo">{"Pular para o conteúdo" if lang == "pt" else "Skip to content"}</a>
+<div class="wrap legal">
+  <nav class="topbar" aria-label="{e(u["lang_label"])}">
+    <div class="lang">
+      <a href="/privacidade/" hreflang="pt-BR" lang="pt-BR" aria-current="{"true" if lang == "pt" else "false"}">PT</a>
+      <a href="/en/privacy/" hreflang="en-AU" lang="en-AU" aria-current="{"true" if lang == "en" else "false"}">EN</a>
+    </div>
+  </nav>
+  <main id="conteudo">
+    <article>
+      <h1>{e(u["privacy_title"])}</h1>
+      <p>{e(u["updated"])}: <time datetime="{d.isoformat()}">{fmt_date(d, lang)}</time></p>
+      {PRIVACY_BODY[lang]}
+      <p><a class="btn btn-dark" href="{home}">{e(u["back"])}</a></p>
+    </article>
+  </main>
+  <footer><span>© {d.year} Julio Cesar Prava · {e(u["place"])} · {e(u["rights"])}</span></footer>
+</div>
+</body>
+</html>
+"""
+
+MANIFEST = {
+  "name": "Julio Cesar Prava · Projetos",
+  "short_name": "Julio Prava",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F3F2F8",
+  "theme_color": "#F3F2F8",
+  "icons": [
+    {"src": "/icon-192.png", "sizes": "192x192", "type": "image/png"},
+    {"src": "/icon-512.png", "sizes": "512x512", "type": "image/png"},
+    {"src": "/icon-512-maskable.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable"}
+  ]
+}
 
 def sitemap():
     d = LAST_UPDATED.isoformat()
     alt = (f'<xhtml:link rel="alternate" hreflang="pt-BR" href="{SITE_URL}/"/>'
            f'<xhtml:link rel="alternate" hreflang="en-AU" href="{SITE_URL}/en/"/>'
            f'<xhtml:link rel="alternate" hreflang="x-default" href="{SITE_URL}/"/>')
-    urls = "".join(f"<url><loc>{SITE_URL}{p}</loc><lastmod>{d}</lastmod>{alt}</url>" for p in ("/", "/en/"))
+    urls = "".join(f"<url><loc>{SITE_URL}{p}</loc><lastmod>{d}</lastmod>{alt}</url>" for p in ("/", "/en/")) + "".join(f"<url><loc>{SITE_URL}{p}</loc><lastmod>{d}</lastmod></url>" for p in ("/privacidade/", "/en/privacy/"))
     return ('<?xml version="1.0" encoding="UTF-8"?>\n'
             '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">'
             f"{urls}</urlset>\n")
@@ -815,13 +959,28 @@ def sitemap():
 # ------------------------------------------------------------------
 # IMAGENS (compartilhamento e ícones), geradas a partir do avatar
 # ------------------------------------------------------------------
+def _png(im, path):
+    # 256 cores com pontilhado: metade do peso, sem perda visível nestas ilustrações
+    from PIL import Image
+    im.quantize(colors=256, method=Image.Quantize.MEDIANCUT, dither=Image.Dither.FLOYDSTEINBERG).save(path, optimize=True)
+
 def make_images(out):
     from PIL import Image, ImageDraw, ImageFont
     av = Image.open(os.path.join(ROOT, "assets", "avatar.webp")).convert("RGBA")
     bold = "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
     reg = "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"
+    # Ícones: rosto do avatar sobre amarelo (favicon, retina, Android e PWA)
+    face = av.crop((40, 0, av.width - 40, av.width - 80))
+    for size, name, scale in ((64, "favicon.png", .92), (180, "apple-touch-icon.png", .92), (192, "icon-192.png", .92),
+                              (512, "icon-512.png", .92), (512, "icon-512-maskable.png", .72)):
+        bg = Image.new("RGBA", (size, size), "#FFC21F")
+        k = size * scale / max(face.size)
+        f = face.resize((round(face.width * k), round(face.height * k)), Image.LANCZOS)
+        bg.paste(f, ((size - f.width) // 2, size - f.height), f)
+        _png(bg.convert("RGB"), os.path.join(out, name))
+
     if not (os.path.exists(bold) and os.path.exists(reg)):
-        print("aviso: fontes DejaVu não encontradas; og-image e ícones mantidos como estão")
+        print("aviso: fontes DejaVu não encontradas; og-image mantida como está")
         return
 
     og = Image.new("RGB", (1200, 630), "#F3F2F8")
@@ -836,15 +995,7 @@ def make_images(out):
         d.rounded_rectangle((100 + i * 62, 460, 148 + i * 62, 508), 14, fill=c)
     a = av.copy(); a.thumbnail((440, 516))
     og.paste(a, (1160 - a.width - 40, 590 - a.height), a)
-    og.save(os.path.join(out, "og-image.png"), optimize=True)
-
-    # Ícones: rosto do avatar sobre amarelo
-    face = av.crop((40, 0, av.width - 40, av.width - 80))
-    for size, name in ((64, "favicon.png"), (180, "apple-touch-icon.png")):
-        bg = Image.new("RGBA", (size, size), "#FFC21F")
-        f = face.copy(); f.thumbnail((int(size * .92), int(size * .92)))
-        bg.paste(f, ((size - f.width) // 2, size - f.height), f)
-        bg.convert("RGB").save(os.path.join(out, name), optimize=True)
+    _png(og, os.path.join(out, "og-image.png"))
 
 # ------------------------------------------------------------------
 def write(path, text):
@@ -861,6 +1012,9 @@ def main():
     write(os.path.join(dist, "index.html"), page_github("pt"))
     write(os.path.join(dist, "en", "index.html"), page_github("en"))
     write(os.path.join(dist, "404.html"), page_404())
+    write(os.path.join(dist, "privacidade", "index.html"), page_privacy("pt"))
+    write(os.path.join(dist, "en", "privacy", "index.html"), page_privacy("en"))
+    write(os.path.join(dist, "manifest.webmanifest"), json.dumps(MANIFEST, ensure_ascii=False, indent=2) + "\n")
     write(os.path.join(dist, "sitemap.xml"), sitemap())
     write(os.path.join(dist, "robots.txt"), f"User-agent: *\nAllow: /\n\nSitemap: {SITE_URL}/sitemap.xml\n")
     write(os.path.join(dist, "CNAME"), "meusprojetos.biblioverse.org\n")
@@ -868,6 +1022,8 @@ def main():
     make_images(dist)
     write(os.path.join(prev, "index.html"), page_preview("pt"))
     write(os.path.join(prev, "en", "index.html"), page_preview("en"))
+    write(os.path.join(prev, "privacidade", "index.html"), page_privacy("pt"))
+    write(os.path.join(prev, "en", "privacy", "index.html"), page_privacy("en"))
     shutil.copy(os.path.join(ROOT, "assets", "avatar.webp"), prev)
     with open(os.path.join(ROOT, "check.js"), "w") as f: f.write(JS)
     print("ok:", dist)
