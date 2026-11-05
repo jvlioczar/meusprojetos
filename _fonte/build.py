@@ -15,7 +15,7 @@ from datetime import date
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 SITE_URL = "https://meusprojetos.biblioverse.org"
-LAST_UPDATED = date(2026, 10, 18)
+LAST_UPDATED = date(2026, 11, 5)
 
 # ------------------------------------------------------------------
 # TEXTOS DA INTERFACE
@@ -24,13 +24,13 @@ UI = {
   "pt": {
     "html_lang": "pt-BR", "og_locale": "pt_BR",
     "seo_title": "Julio Cesar Prava · Projetos de design, IA e intercâmbio",
-    "seo_desc": "Portfólio de Julio Cesar Prava, designer gráfico brasileiro em Brisbane: projetos de design, IA, intercâmbio, pensamento crítico, livros, curadoria e guias.",
+    "seo_desc": "Portfólio de Julio Cesar Prava, designer gráfico brasileiro em Brisbane: projetos de design, IA, intercâmbio, pensamento crítico, ética, livros, curadoria, guias e esportes.",
     "skip": "Pular para os projetos",
     "lang_label": "Idioma",
     "hello": "G'day, eu sou",
     "bio": "Designer gráfico, criador de conteúdo, curador e ativista. Brasileiro em Brisbane, com mais de 14 anos de design e um monte de projetos sobre ética, IA, intercâmbio e boas listas.",
     "socials": "Redes sociais",
-    "stats": [("14+", "anos de design"), ("30+", "projetos"), ("17", "bibliotecas")],
+    "stats": [("14+", "anos de design"), ("50+", "projetos"), ("22", "bibliotecas")],
     "avatar_alt": "Ilustração de Julio: cabelo preto, bigode, barba castanha e moletom azul",
     "shortcuts": "Atalhos para categorias",
     "filter_label": "Filtrar por categoria",
@@ -49,13 +49,13 @@ UI = {
   "en": {
     "html_lang": "en-AU", "og_locale": "en_AU",
     "seo_title": "Julio Cesar Prava · Design, AI and study abroad projects",
-    "seo_desc": "Portfolio of Julio Cesar Prava, a Brazilian graphic designer in Brisbane: design, AI, study abroad, critical thinking, books, curation and guides.",
+    "seo_desc": "Portfolio of Julio Cesar Prava, a Brazilian graphic designer in Brisbane: design, AI, study abroad, critical thinking, ethics, books, curation, guides and sport.",
     "skip": "Skip to projects",
     "lang_label": "Language",
     "hello": "G'day, I'm",
     "bio": "Graphic designer, content creator, curator and activist. A Brazilian in Brisbane with 14+ years in design and a whole bunch of projects on ethics, AI, study abroad and good lists.",
     "socials": "Social media",
-    "stats": [("14+", "years in design"), ("30+", "projects"), ("17", "libraries")],
+    "stats": [("14+", "years in design"), ("50+", "projects"), ("22", "libraries")],
     "avatar_alt": "Illustration of Julio: black hair, moustache, brown beard and a blue hoodie",
     "shortcuts": "Category shortcuts",
     "filter_label": "Filter by category",
@@ -89,17 +89,17 @@ SAME_AS = [
 # ------------------------------------------------------------------
 CATEGORIES = [
   dict(id="design", color="--c-design",
-       pt=("Design", None, "Bibliotecas, blogs e inspiração para quem trabalha com design."),
-       en=("Design", None, "Libraries, blogs and inspo for anyone who works in design.")),
+       pt=("Design", None, "Bibliotecas, blogs e inspiração para quem trabalha com design e arte."),
+       en=("Design", None, "Libraries, blogs and inspo for anyone who works in design and art.")),
   dict(id="ia", color="--c-ia",
        pt=("Inteligência Artificial", "IA", "Ferramentas e a história da inteligência artificial."),
        en=("Artificial Intelligence", "AI", "AI tools and the history behind them.")),
   dict(id="inter", color="--c-inter",
-       pt=("Intercâmbio e Idiomas", "Intercâmbio", "Tudo para quem quer estudar, morar e trabalhar na Austrália."),
-       en=("Study Abroad & Languages", "Study Abroad", "Everything you need to study, live and work in Australia.")),
+       pt=("Intercâmbio e Idiomas", "Intercâmbio", "Tudo para quem quer estudar, morar e trabalhar na Austrália, e entender as duas culturas."),
+       en=("Study Abroad & Languages", "Study Abroad", "Everything you need to study, live and work in Australia, and to understand both cultures.")),
   dict(id="pens", color="--c-pens",
-       pt=("Pensamento Crítico", None, "Testes, publicações e bibliotecas para pensar melhor e com mais coerência."),
-       en=("Critical Thinking", None, "Quizzes, publications and libraries to help you think more clearly and consistently.")),
+       pt=("Pensamento Crítico", None, "Testes, guias, publicações e bibliotecas para pensar melhor, com ética e coerência."),
+       en=("Critical Thinking", None, "Quizzes, guides, publications and libraries to help you think more clearly, ethically and consistently.")),
   dict(id="livro", color="--c-livro",
        pt=("Livros", None, "Um livro publicado e dois a caminho."),
        en=("Books", None, "One book out, two on the way.")),
@@ -107,14 +107,17 @@ CATEGORIES = [
        pt=("Curadoria", None, "Hubs e coleções com curadoria humana."),
        en=("Curation", None, "Hand-picked hubs and collections, curated by real people.")),
   dict(id="guia", color="--c-guia",
-       pt=("Guias e Diretórios", None, "Diretórios práticos para viver bem em Brisbane."),
-       en=("Guides & Directories", None, "Practical directories for making the most of Brisbane.")),
+       pt=("Guias e Diretórios", None, "Diretórios e guias práticos para o dia a dia, de Brisbane para o mundo."),
+       en=("Guides & Directories", None, "Practical directories and guides for everyday life, from Brisbane to the world.")),
   dict(id="hom", color="--c-hom",
        pt=("Homenagens", None, "Memória e afeto em forma de site."),
        en=("Tributes", None, "Memory and love, in website form.")),
+  dict(id="esp", color="--c-esp",
+       pt=("Esportes", None, "Rankings, seleções de todos os tempos e o mundo dos esports."),
+       en=("Sport", None, "Rankings, all-time line-ups and the world of esports.")),
   dict(id="out", color="--c-out",
-       pt=("Outros", None, "Bibliotecas temáticas, blogs de estética e projetos que estão nascendo."),
-       en=("Other", None, "Themed libraries, aesthetics blogs and a few projects still taking shape.")),
+       pt=("Outros", None, "Bibliotecas temáticas, música, blogs de estética e projetos que estão nascendo."),
+       en=("Other", None, "Themed libraries, music, aesthetics blogs and a few projects still taking shape.")),
 ]
 
 # ------------------------------------------------------------------
@@ -131,7 +134,8 @@ T = {
   "aes": ("Estética", "Aesthetics"), "code": ("Programação", "Coding"), "music": ("Música", "Music"),
   "data": ("Dados", "Data"), "web3": ("Web3", "Web3"), "games": ("Games", "Gaming"),
   "prod": ("Produtividade", "Productivity"), "career": ("Carreira", "Careers"),
-  "esports": ("Esports", "Esports"),
+  "esports": ("Esports", "Esports"), "football": ("Futebol", "Football"),
+  "ethics": ("Ética", "Ethics"), "safety": ("Segurança", "Safety"),
 }
 
 PROJECTS = [
@@ -143,9 +147,11 @@ PROJECTS = [
   P("design", ("Pôsteres", "Posters"), "https://posteres.tumblr.com",
     ("Inspiração para pôsteres de eventos.", "Inspiration for event posters.")),
   P("design", ("Biblioteca de Fotografia", "Photography Library"), "https://photography.biblioverse.org",
-    ("Recursos, apps e referências para fotografia.", "Resources, apps and references for photography."), "wip"),
+    ("Recursos, apps e referências para fotografia.", "Resources, apps and references for photography.")),
   P("design", ("Biblioteca de Mídia Impressa", "Print Media Library"), "https://print.biblioverse.org",
-    ("Revistas, jornais, gráficas e o universo do impresso.", "Magazines, newspapers, printers and the world of print."), "wip"),
+    ("Revistas, jornais, gráficas e o universo do impresso.", "Magazines, newspapers, printers and the world of print.")),
+  P("design", ("Biblioteca de Arte", "Art Library"), "https://art.biblioverse.org",
+    ("Conceitos, técnicas, materiais, movimentos, artistas e museus.", "Concepts, techniques, materials, movements, artists and museums.")),
 
   # IA
   P("ia", ("Biblioteca de IAs", "AI Library"), "https://ai.biblioverse.org",
@@ -158,14 +164,18 @@ PROJECTS = [
     ("Criadores, agências, apps e guia de chegada para quem vem para a Austrália.", "Creators, agencies, apps and an arrival guide for anyone moving to Australia.")),
   P("inter", ("Austrália Para Todos", "Australia For Everyone"), "https://australiaparatodos.wordpress.com",
     ("Conteúdo sobre a Austrália para o público brasileiro.", "Content about Australia for a Brazilian audience.")),
-  P("inter", ("Austrália vs Brasil", "Australia vs Brazil"), "https://australiavsbrasil.biblioverse.org",
-    ("Infográfico interativo comparando os dois países com índices oficiais.", "An interactive infographic comparing both countries using official data.")),
+  P("inter", ("Austrália vs Brasil", "Australia vs Brazil"), None,
+    ("Infográfico interativo comparando os dois países com índices oficiais.", "An interactive infographic comparing both countries using official data."), "wip"),
   P("inter", ("G'day Julio", "G'day Julio"), "https://instagram.com/gdayjulio",
     ("Dicas, reflexões e humor sobre estudar, trabalhar e viver na Austrália.", "Tips, reflections and a laugh or two about studying, working and living in Australia.")),
   P("inter", ("Biblioteca de Idiomas", "Language Library"), "https://language.biblioverse.org",
     ("Apps, canais e métodos para aprender idiomas.", "Apps, channels and methods for learning languages.")),
   P("inter", ("Biblioteca de Viagem", "Travel Library"), "https://travel.biblioverse.org",
     ("Ferramentas para planejar viagens e intercâmbio.", "Tools for planning trips and study abroad.")),
+  P("inter", ("Cultura Australiana", "Australian Culture"), "https://australianculture.biblioverse.org",
+    ("Uma jornada para entender a Austrália e os australianos.", "A journey to understand Australia and Australians.")),
+  P("inter", ("Cultura Brasileira", "Brazilian Culture"), "https://brazilianculture.biblioverse.org",
+    ("Uma jornada para entender o Brasil e os brasileiros.", "A journey to understand Brazil and Brazilians.")),
 
   # Pensamento crítico
   P("pens", ("Teste de Visão Moral", "Moral Outlook Test"), "https://ethicstest.biblioverse.org",
@@ -181,7 +191,15 @@ PROJECTS = [
   P("pens", ("Biblioteca de Filosofia", "Philosophy Library"), "https://philosophy.biblioverse.org",
     ("Correntes, autores e referências da filosofia.", "Schools of thought, thinkers and key references in philosophy.")),
   P("pens", ("Política Para Iniciantes", "Politics for Beginners"), "https://politicaparainiciantes.biblioverse.org",
-    ("Conceitos e ideias políticas explicados para quem está começando.", "Political ideas and concepts explained for people just starting out."), "wip"),
+    ("Conceitos e ideias políticas explicados para quem está começando.", "Political ideas and concepts explained for people just starting out.")),
+  P("pens", ("Ética Para Iniciantes", "Ethics for Beginners"), "https://eticaparainiciantes.biblioverse.org",
+    ("Guia de ética em três níveis: teorias, círculo moral, metaética, ética animal, dilemas e filósofos.", "A three-level ethics guide: theories, the moral circle, metaethics, animal ethics, dilemmas and philosophers (in Portuguese)."), tags=[T["ethics"]]),
+  P("pens", ("Biblioteca de Conspirações", "Conspiracy Library"), "https://conspiracy.biblioverse.org",
+    ("Teorias da conspiração, pseudociências e crenças falsas, e como desmenti-las.", "Conspiracy theories, pseudoscience and false beliefs, and how to debunk them.")),
+  P("pens", ("Guia de Argumentação Pelos Animais", "Guia de Argumentação Pelos Animais"), None,
+    ("Catálogo sistemático dos argumentos usados contra os animais, com a resposta a cada um.", "A systematic catalogue of the arguments used against animals, with a reply to each (in Portuguese)."), "wip", [T["ethics"]]),
+  P("pens", ("Questão de Ética", "Questão de Ética"), None,
+    ("Site-livro da coleção Uma Jornada pela Ética Animal, em 12 volumes, com lições, testes e ferramentas.", "A website-book of the 12-volume collection Uma Jornada pela Ética Animal, with lessons, quizzes and tools (in Portuguese)."), "wip", [T["ethics"]]),
 
   # Livros
   P("livro", ("Meu Mundo em Listas", "Meu Mundo em Listas"), None,
@@ -197,15 +215,19 @@ PROJECTS = [
   P("cur", ("Biblioteca de Redes Sociais", "Social Media Library"), "https://social.biblioverse.org",
     ("Plataformas, ferramentas e recursos para criadores.", "Platforms, tools and resources for creators.")),
   P("cur", ("Biblioteca de Listas", "Lists Library"), "https://list.biblioverse.org",
-    ("As melhores listas e rankings, reunidos em um só lugar.", "The best lists and rankings, all in one place."), "wip"),
+    ("As melhores listas e rankings, reunidos em um só lugar.", "The best lists and rankings, all in one place.")),
 
   # Guias e Diretórios
   P("guia", ("Brisbane Vegan Guide", "Brisbane Vegan Guide"), "https://brisbaneveganguide.com",
     ("Restaurantes e grupos veganos em Brisbane.", "Vegan restaurants and groups around Brisbane.")),
-  P("guia", ("Brasileiros em Brisbane", "Brazilians in Brisbane"), "https://brasileirosembrisbane.biblioverse.org",
-    ("Diretório para estudantes de intercâmbio e imigrantes em Brisbane.", "A directory for international students and migrants in Brisbane.")),
+  P("guia", ("Brasileiros em Brisbane", "Brazilians in Brisbane"), None,
+    ("Diretório para estudantes de intercâmbio e imigrantes em Brisbane.", "A directory for international students and migrants in Brisbane."), "wip"),
   P("guia", ("Brissy Op Shops", "Brissy Op Shops"), None,
-    ("Guia para descobrir os brechós (op shops) de Brisbane.", "Your guide to finding Brisbane's best op shops."), "wip"),
+    ("Guia dos brechós (op shops) de Brisbane, com mapa, horários e dicas.", "Your guide to Brisbane's op shops, with a map, opening hours and tips."), "wip"),
+  P("guia", ("Guia de Alimentos Éticos", "Ethical Food Guide"), "https://ethicalfood.biblioverse.org",
+    ("Diretório e mapa de mais de 2.300 empresas de proteína alternativa em 71 países.", "A directory and map of 2,300+ alternative protein companies in 71 countries.")),
+  P("guia", ("Biblioteca Antigolpe", "Anti-Scam Library"), "https://antiscam.biblioverse.org",
+    ("Como identificar, verificar, denunciar e se proteger de golpes e fraudes.", "How to spot, check, report and protect yourself from scams and fraud."), tags=[T["safety"]]),
 
   # Homenagens
   P("hom", ("Arli Prado", "Arli Prado"), "https://arliprado.com.br",
@@ -216,24 +238,36 @@ PROJECTS = [
     ("Tumblr de estética alternativa.", "A Tumblr of alternative aesthetics."), tags=[T["altaes"]]),
   P("out", ("BBIE", "BBIE"), "https://blackbeautyiseverywhere.tumblr.com",
     ("Tumblr que celebra a beleza negra em todo lugar.", "A Tumblr celebrating Black beauty everywhere."), tags=[T["aes"]]),
-  P("out", ("Valorant Spikers", "Valorant Spikers"), "https://www.facebook.com/groups/spikers.org",
+  P("esp", ("GOATs", "GOATs"), "https://goat.biblioverse.org",
+    ("Quem é o maior atleta de todos os tempos em mais de 300 modalidades, com fontes.", "Who's the greatest athlete of all time in 300+ sports, with sources (in Portuguese).")),
+  P("esp", ("Lendas do Futebol Brasileiro", "Lendas do Futebol Brasileiro"), "https://lendasdofutebolbrasileiro.biblioverse.org",
+    ("As seleções de todos os tempos da Seleção Brasileira e de 74 clubes do Brasil.", "All-time line-ups for Brazil's national team and 74 Brazilian clubs (in Portuguese)."), tags=[T["football"]]),
+  P("esp", ("Os Maiores Clubes do Futebol Mundial", "The World's Biggest Football Clubs"), "https://biggestclubs.biblioverse.org",
+    ("383 clubes de 16 países ranqueados por títulos mundiais, continentais e nacionais.", "383 clubs from 16 countries ranked by world, continental and national titles."), tags=[T["football"]]),
+  P("esp", ("Biblioteca de eSports", "Esports Library"), "https://esports.biblioverse.org",
+    ("Jogos competitivos, campeonatos, equipes, lendas, notícias e transmissões.", "Competitive games, tournaments, teams, legends, news and streams."), tags=[T["esports"]]),
+  P("esp", ("Valorant Spikers", "Valorant Spikers"), "https://www.facebook.com/groups/spikers.org",
     ("Grupo de comunidade brasileira dedicada ao FPS da Riot Games.", "A Brazilian community group for Riot Games' FPS, Valorant."), tags=[T["esports"]]),
   P("out", ("Biblioteca de Programação", "Coding Library"), "https://code.biblioverse.org",
     ("Linguagens, cursos e ferramentas para aprender a programar.", "Languages, courses and tools for learning to code."), tags=[T["code"]]),
   P("out", ("Biblioteca de Games", "Gaming Library"), "https://games.biblioverse.org",
     ("Plataformas, jogos e o universo dos games.", "Platforms, games and all things gaming."), tags=[T["games"]]),
   P("out", ("Biblioteca de Música", "Music Library"), "https://music.biblioverse.org",
-    ("Apps, gêneros, gravadoras e conceitos fundamentais da música.", "Apps, genres, record labels and music fundamentals."), "wip", [T["music"]]),
-  P("out", ("My Music Taste", "My Music Taste"), "https://mymusictaste.biblioverse.org",
+    ("Apps, gêneros, gravadoras e conceitos fundamentais da música.", "Apps, genres, record labels and music fundamentals."), None, [T["music"]]),
+  P("out", ("Tipos de Rock", "Types of Rock"), "https://typesofrock.biblioverse.org",
+    ("A teoria da evolução aplicada ao rock: 97 gêneros numa árvore interativa.", "The theory of evolution applied to rock: 97 genres on an interactive tree."), tags=[T["music"]]),
+  P("out", ("Biblioteca de True Crime", "True Crime Library"), "https://truecrime.biblioverse.org",
+    ("Crimes reais, acidentes e desastres, e como preveni-los e denunciá-los.", "Real crimes, accidents and disasters, and how to prevent and report them.")),
+  P("out", ("My Music Taste", "My Music Taste"), None,
     ("Meus gostos musicais em forma de infográfico.", "My taste in music, as an infographic."), "wip", [T["music"]]),
   P("out", ("Biblioteca de Dados", "Data Library"), "https://data.biblioverse.org",
-    ("Fontes de dados, visualização e análise.", "Data sources, visualisation and analysis."), "wip", [T["data"]]),
+    ("Fontes de dados, visualização e análise.", "Data sources, visualisation and analysis."), None, [T["data"]]),
   P("out", ("Biblioteca de Web3", "Web3 Library"), "https://web3.biblioverse.org",
-    ("Blockchain, carteiras e o ecossistema descentralizado.", "Blockchain, wallets and the decentralised ecosystem."), "wip", [T["web3"]]),
+    ("Blockchain, carteiras e o ecossistema descentralizado.", "Blockchain, wallets and the decentralised ecosystem."), None, [T["web3"]]),
   P("out", ("Biblioteca de Organização", "Organisation Library"), "https://management.biblioverse.org",
-    ("Apps e métodos de produtividade e gestão.", "Apps and methods for productivity and management."), "wip", [T["prod"]]),
+    ("Apps e métodos de produtividade e gestão.", "Apps and methods for productivity and management."), None, [T["prod"]]),
   P("out", ("Biblioteca de Emprego", "Jobs Library"), "https://job.biblioverse.org",
-    ("Sites de vagas, currículo e carreira.", "Job boards, resumes and career tips."), "wip", [T["career"]]),
+    ("Sites de vagas, currículo e carreira.", "Job boards, resumes and career tips."), None, [T["career"]]),
   P("out", ("App de organização", "Organisation app"), None,
     ("Nome secreto. Um app para deixar a rotina mais organizada.", "Secret name. An app to make everyday life more organised."), "wip", [T["prod"]]),
   P("out", ("Teoria Musical", "Music Theory"), None,
@@ -249,7 +283,7 @@ CSS = r"""
   color-scheme:light;
   --bg:#F3F2F8; --surface:#FFFFFF; --ink:#16141F; --muted:#5E5B6E; --line:#E3E1EC;
   --c-design:#F2661B; --c-ia:#5B3FD1; --c-inter:#0E855C; --c-pens:#DB2877; --c-cur:#C28A00; --c-yellow:#FFC21F;
-  --c-hom:#8B3A62; --c-guia:#1463F3; --c-out:#3E4460; --c-livro:#C62F3A;
+  --c-hom:#8B3A62; --c-esp:#0D7A72; --c-guia:#1463F3; --c-out:#3E4460; --c-livro:#C62F3A;
   --font-display:"Gabarito","Trebuchet MS",system-ui,sans-serif;
   --font-body:"Figtree",system-ui,-apple-system,"Segoe UI",sans-serif;
   --r-lg:32px; --r-md:20px; --r-sm:999px;
@@ -786,6 +820,9 @@ def make_images(out):
     av = Image.open(os.path.join(ROOT, "assets", "avatar.webp")).convert("RGBA")
     bold = "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
     reg = "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"
+    if not (os.path.exists(bold) and os.path.exists(reg)):
+        print("aviso: fontes DejaVu não encontradas; og-image e ícones mantidos como estão")
+        return
 
     og = Image.new("RGB", (1200, 630), "#F3F2F8")
     d = ImageDraw.Draw(og)
