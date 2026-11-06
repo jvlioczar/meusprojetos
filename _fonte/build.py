@@ -170,6 +170,8 @@ PROJECTS = [
     ("As principais ferramentas de inteligência artificial, organizadas por uso.", "The top AI tools, sorted by what they do.")),
   P("ia", ("Timeline da IA", "AI Timeline"), "https://aihistory.biblioverse.org",
     ("Linha do tempo interativa com os marcos da história da IA.", "An interactive timeline of the big milestones in AI history.")),
+  P("ia", ("Curated AI", "Curated AI"), "https://curatedai.biblioverse.org",
+    ("Catálogo dos melhores projetos feitos com IA e curados por humanos.", "A catalogue of the best AI-assisted projects, curated by humans.")),
 
   # Intercâmbio e Idiomas
   P("inter", ("Brasileiros na Austrália", "Brazilians in Australia"), "https://brasileirosnaaustralia.biblioverse.org",
