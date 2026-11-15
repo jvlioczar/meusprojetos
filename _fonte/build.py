@@ -211,7 +211,7 @@ PROJECTS = [
   P("pens", ("Biblioteca de Conspirações", "Conspiracy Library"), "https://biblioverse.org/conspiracy/",
     ("Teorias da conspiração, pseudociências e crenças falsas, e como desmenti-las.", "Conspiracy theories, pseudoscience and false beliefs, and how to debunk them.")),
   P("pens", ("Guia de Argumentação Pelos Animais", "Guia de Argumentação Pelos Animais"), None,
-    ("Toda objeção merece uma boa resposta: +250 argumentos contra o veganismo, na versão mais forte, com o que acertam, onde falham e como responder.", "Every objection deserves a good answer: 250+ arguments against veganism, in their strongest form, with what they get right, where they fail and how to answer (in Portuguese and English)."), "wip", [T["ethics"]]),
+    ("Toda objeção merece uma boa resposta: +260 argumentos contra o veganismo, na versão mais forte, com o que acertam, onde falham e como responder.", "Every objection deserves a good answer: 260+ arguments against veganism, in their strongest form, with what they get right, where they fail and how to answer (in Portuguese and English)."), "wip", [T["ethics"]]),
   P("pens", ("Questão de Ética", "Questão de Ética"), None,
     ("Site-livro da coleção Uma Jornada pela Ética Animal, em 12 volumes, com lições, testes e ferramentas.", "A website-book of the 12-volume collection Uma Jornada pela Ética Animal, with lessons, quizzes and tools (in Portuguese)."), "wip", [T["ethics"]]),
 
